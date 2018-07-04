@@ -140,11 +140,166 @@
 
         <div id="main" >
             <div class ="post_page_title_img" style="height: 25rem;background-image: url(一人.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >xin</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >初见个人博客：GitHub + hexo</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p><img src="/2018/07/03/xin/一人.jpg" alt="不是小黄图"></p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;半角春风得意马蹄疾，一日看尽长安花。<br>&emsp;&emsp;在此之前，还是<strong>颤颤巍巍做人，努努力力做事</strong>吧！<br>（以下步骤确保前面完成，再继续后面进程）</p>
+<hr>
+<p><br><br><br></p>
+<h3 id="0、简单介绍"><a href="#0、简单介绍" class="headerlink" title="0、简单介绍"></a>0、简单介绍</h3><p>&emsp;&emsp;GitHub是一个托管平台。<br>&emsp;&emsp;hexo是一个快速、简洁的博客框架,使用Markdown解析，生成静态网页。<br>&emsp;&emsp;用户通过hexo完成本地的博客编辑，然后将其提交到GitHub上展示。</p>
+<hr>
+<h3 id="1、工具准备"><a href="#1、工具准备" class="headerlink" title="1、工具准备"></a>1、工具准备</h3><blockquote>
+<p>（官网下载)</p>
+</blockquote>
+<ul>
+<li>（1）nodejs安装  </li>
+<li>（2）git安装  </li>
+</ul>
+<p><strong>安装建议：</strong>默认C盘，一直Next。<br><strong>安装检查1：</strong>CMD窗口输入node -v，查看node版本。<br><strong>安装检查2：</strong>CMD窗口输入npm -v，查看npm版本。<br><strong>安装检查3：</strong>CMD窗口输入git -version，查看node版本。</p>
+<hr>
+<h3 id="2、GitHub部署"><a href="#2、GitHub部署" class="headerlink" title="2、GitHub部署"></a>2、GitHub部署</h3><ul>
+<li>(1) 账号登录<blockquote>
+<p>登录<a href="https://github.com" target="_blank" rel="noopener">GitHub官网</a>,创建一个GitHub账号 。</p>
+</blockquote>
+</li>
+<li>(2) 代码库创建<blockquote>
+<p>登陆账号，点击页面右上角的加号，选择 <em>New repository</em>。<br><strong>注意：</strong>设置代码库名称为 <em>username.github.io</em>,其中 <em>sername</em>为你的用户名。</p>
+</blockquote>
+</li>
+<li>(3）开启gh-pages功能<blockquote>
+<p>1.点击<em>代码库</em>界面右侧的<em>Settings</em>，你将会打开这个库的setting页面，向下拖动，直到看见<em>GitHub Pages</em>。<br>2.根据官网提供方法，开启gh-pages功能。<br>3.最后访问<em>username.github.io</em>，检查是否设置完毕。（或许需要等待一段时间）<br>此时博客雏形初现。</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<p>（以上完成GitHub部署）</p>
+<h3 id="3、hexo部署"><a href="#3、hexo部署" class="headerlink" title="3、hexo部署"></a>3、hexo部署</h3><ul>
+<li><p>（1）hexo安装</p>
+<ul>
+<li><p>方法1：</p>
+<blockquote>
+<p>在自己认为合适的地方创建一个文件夹（该目录即为博客根目录），然后在文件夹空白处按住<em>Shift+鼠标右键</em>，然后点击在此处打开命令行窗口<br>（建议：Git Bish)。<br>(以下代码输入，若无特别说明，均以此法输入）<br>输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g </span><br><span class="line">npm install hexo --save </span><br><span class="line">#hexo安装语句</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>方法2：</p>
+<blockquote>
+<p>输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org #安装cnpm代替npm</span><br><span class="line">npm install -g hexo-cli --registry=https://registry.npm.taobao.org #淘宝源安装hexo</span><br><span class="line">npm install hexo --save</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>建议使用方法1，若安装失效（可能是防火墙原因），则使用方法2(此时注意ncpm的替换）。</p>
+<ul>
+<li>（2）hexo检查<blockquote>
+<p>查看版本信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="4、hexo配置"><a href="#4、hexo配置" class="headerlink" title="4、hexo配置"></a>4、hexo配置</h3><ul>
+<li><p>（1）hexo命令语句初解：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo init  #hexo初始化</span><br><span class="line">hexo clean #清空缓存</span><br><span class="line">hexo g     #生成静态页面至public目录</span><br><span class="line">hexo s     #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</span><br><span class="line">hexo d     #将.deploy目录部署至GitHub</span><br><span class="line">hexo h     #查看帮助</span><br><span class="line">hexo v     #查看Hexo的版本</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>（2）配置：</p>
+<blockquote>
+<p>初始化hexo:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>注意文件夹为空！接着输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install #自动安装需要的组件</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>体验：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p>此时出现网址(<a href="http://localhost:4000),说明本地部署完成，可进入该网址观看预览。" target="_blank" rel="noopener">http://localhost:4000),说明本地部署完成，可进入该网址观看预览。</a></p>
+<hr>
+<p>（以上完成hexo本地部署）</p>
+<h3 id="5、hexo-GitHub"><a href="#5、hexo-GitHub" class="headerlink" title="5、hexo+GitHub"></a>5、hexo+GitHub</h3><ul>
+<li><p>（1）git bash配置身份信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;   #用户名</span><br><span class="line">git config --global user.email &quot;useremail&quot; #用户邮箱</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>（2）配置Deployment：</p>
+<blockquote>
+<p>博客根目录下,在_config.yml文件中，找到Deployment，然后按照如下修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: git@github.com:username/username.github.io.git #相应作出修改</span><br><span class="line">branch: master</span><br><span class="line">#注意：上面的type: repo: branch: 后面都有空格，千万不要写掉了！！</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p><strong>建议：</strong>下载使用Sublime软件修改，其他软件因为编码问题，导致修改失败。</p>
+<ul>
+<li><p>（3）生成SSH key:</p>
+<blockquote>
+<p>SSH key是Git与github之间的传输密匙，有了它每次提交文件就不需要再输入用户名和密码了。<br>输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;username@foxmail.com&quot; #修改用户名或者将其直接改为用户邮箱</span><br><span class="line">#连续三个回车（出现y or n ,回应y)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>此时若出现类似下图,则说明生成成功</p>
+</blockquote>
+<p><img src="/2018/07/03/xin/ssh.jpg" alt="SSH"></p>
+<blockquote>
+<p>在C:\Users\用户名.ssh下找到<em>id_rsa.pub</em>，用sublime打开，复制SSH key。</p>
+</blockquote>
+<p><img src="/2018/07/03/xin/rsa.jpg" alt="rsa"></p>
+</li>
+<li><p>（4）配置SSH key：</p>
+<blockquote>
+<p>将得到的SSH key粘贴到Github ssh设置新建的SSH keys中，Title任意写。</p>
+</blockquote>
+<p><img src="/2018/07/03/xin/git.jpg" alt="git"></p>
+<blockquote>
+<p>创建好如图：</p>
+</blockquote>
+<p><img src="/2018/07/03/xin/d.jpg" alt="d"></p>
+</li>
+<li>（5）验证连接：<blockquote>
+<p>执行以下命令测试SSH key是否添加成功，若出现下面情况，说明SSH key添加成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh ‐T git@github.com</span><br><span class="line">The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established. RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48. Are you sure you want to continue connecting (yes/no)? yes  // 输入yes</span><br><span class="line">Hi username! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>或观察GitHub的SSH key图标是否变为绿色。</p>
+</blockquote>
+<hr>
+<p>（以上完成hexo+GitHub连接）</p>
+<h3 id="6、博客体验"><a href="#6、博客体验" class="headerlink" title="6、博客体验"></a>6、博客体验</h3><ul>
+<li><p>（1）安装所需插件：</p>
+<blockquote>
+<p>输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save #hexo d的前提条件</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>（2）导出本地部署至GitHub：</p>
+<blockquote>
+<p>输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>（3）登陆体验<br>此时博客已经开始脱变。</p>
+</li>
+</ul>
+<hr>
+<h3 id="6、文章新建"><a href="#6、文章新建" class="headerlink" title="6、文章新建"></a>6、文章新建</h3><p>&emsp;&emsp;在博客根目录下，右键进入Git Bash,输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;标题名&quot;  #新建文章</span><br><span class="line">#在根目录下的source/_post目录下创建一个md文件</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;编辑md文件（建议：markdown编辑器）<br>&emsp;&emsp;写好之后，回到根目录进入Git Bash，使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g #本地生成</span><br><span class="line">hexo s #本地预览</span><br><span class="line">hexo d #导出部署</span><br></pre></td></tr></table></figure></p>
+<p><strong>等待发布！</strong></p>
+<hr>
+<h3 id="7、博客美化"><a href="#7、博客美化" class="headerlink" title="7、博客美化"></a>7、博客美化</h3><ul>
+<li>（1）参数修改：<br>此时博客雏形虽有，但需要美化。首先是个人信息的导入，可自行百度官方文档，对_config.yml文件进行修改。<br><strong>注意：</strong>根目录下有一个_config.yml文件，其<em>themes</em>文件夹下也有一个_config.yml文件。<br>修改完毕，本地生成后导出部署即可。</li>
+<li>（2）主题修改：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  #清空缓存</span><br><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  #安装主题</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">#可先hexo s进行预览</span><br><span class="line">#安装主题的语句，第三个参数为安装主题的网址，可作更改，第四个参数为安装路径。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>hexo主题官网有很多主题模板，可自行百度学会安装并美化自己的博客。<br><strong>提示：</strong>themes*文件夹下的_config.yml文件就是一个关键。</p>
+<hr>
+<h2 id="宝宝镇楼"><a href="#宝宝镇楼" class="headerlink" title="宝宝镇楼"></a>宝宝镇楼</h2><p><img src="/2018/07/03/xin/w.jpg" alt="宝宝"></p>
 
             </div>
 
