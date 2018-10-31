@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    NYQX
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="NYQX" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Ting</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >初见mysql+Nacvicat</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>mysql配置：（免安装版）</p>
+<p>1.下载MySQL 8.0.11版本的mysql，官方地址</p>
+<p>2.下载后，将解压出来的文件放到你想放到的磁盘处（不想遇到管理员权限问题的童鞋那就尽量不要放到C盘），我下载解压后放到了F盘，并将文件名改成了MySQL。</p>
+<p>3.在MySQL文件夹下找到my.ini或my-default.ini，如果没有.ini结尾的文件那么就新增。新增内容为如下，注意basedir和datadir是我自己的路径位置，根据自己的定夺。记得新增一个文件Data文件夹</p>
+<p>[mysqld]</p>
+<h1 id="设置3306端口"><a href="#设置3306端口" class="headerlink" title="设置3306端口"></a>设置3306端口</h1><p>port=3306</p>
+<h1 id="设置mysql的安装目录"><a href="#设置mysql的安装目录" class="headerlink" title="设置mysql的安装目录"></a>设置mysql的安装目录</h1><p>basedir=F:\MySQL</p>
+<h1 id="设置mysql数据库的数据的存放目录"><a href="#设置mysql数据库的数据的存放目录" class="headerlink" title="设置mysql数据库的数据的存放目录"></a>设置mysql数据库的数据的存放目录</h1><p>datadir=F:\MySQL\Data</p>
+<h1 id="允许最大连接数"><a href="#允许最大连接数" class="headerlink" title="允许最大连接数"></a>允许最大连接数</h1><p>max_connections=200</p>
+<h1 id="允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统"><a href="#允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统" class="headerlink" title="允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统"></a>允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统</h1><p>max_connect_errors=10</p>
+<h1 id="服务端使用的字符集默认为UTF8"><a href="#服务端使用的字符集默认为UTF8" class="headerlink" title="服务端使用的字符集默认为UTF8"></a>服务端使用的字符集默认为UTF8</h1><p>character-set-server=utf8</p>
+<h1 id="创建新表时将使用的默认存储引擎"><a href="#创建新表时将使用的默认存储引擎" class="headerlink" title="创建新表时将使用的默认存储引擎"></a>创建新表时将使用的默认存储引擎</h1><p>default-storage-engine=INNODB</p>
+<h1 id="默认使用“mysql-native-password”插件认证"><a href="#默认使用“mysql-native-password”插件认证" class="headerlink" title="默认使用“mysql_native_password”插件认证"></a>默认使用“mysql_native_password”插件认证</h1><p>default_authentication_plugin=mysql_native_password<br>[mysql]</p>
+<h1 id="设置mysql客户端默认字符集"><a href="#设置mysql客户端默认字符集" class="headerlink" title="设置mysql客户端默认字符集"></a>设置mysql客户端默认字符集</h1><p>default-character-set=utf8<br>[client]</p>
+<h1 id="设置mysql客户端连接服务端时默认使用的端口"><a href="#设置mysql客户端连接服务端时默认使用的端口" class="headerlink" title="设置mysql客户端连接服务端时默认使用的端口"></a>设置mysql客户端连接服务端时默认使用的端口</h1><p>port=3306</p>
+<p>default-character-set=utf8</p>
+<p>4.cmd打开命令窗口，初始化mysql，初始化语句：mysqld –defaults-file=F:\MySQL\my.ini –initialize –console，注意该语句中的路径为自己的my.ini的所在路径。</p>
+<p>5.执行该语句后会出下日志内容，找到root@localhost，冒号后面的为mysql的初始密码，一定要先记住，下面用来登录修改密码。（图片是我网上摘取别人的，偷个懒，图片中已经写的很清晰了）</p>
+<h2 id="接着我们来修改密码，执行mysql-u-root-p登录mysql，回车后输入我们记下来的初始密码，回车后进入mysql命令，输入修改密码命令ALTER-USER-‘root‘-’localhost’-IDENTIFIED-WITH-mysql-native-password-BY-‘xxx’-xxx是你自己定义的密码。至此mysql免安装版的配置已完成。"><a href="#接着我们来修改密码，执行mysql-u-root-p登录mysql，回车后输入我们记下来的初始密码，回车后进入mysql命令，输入修改密码命令ALTER-USER-‘root‘-’localhost’-IDENTIFIED-WITH-mysql-native-password-BY-‘xxx’-xxx是你自己定义的密码。至此mysql免安装版的配置已完成。" class="headerlink" title="接着我们来修改密码，执行mysql -u root -p登录mysql，回车后输入我们记下来的初始密码，回车后进入mysql命令，输入修改密码命令ALTER USER ‘root‘@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘xxx’;   xxx是你自己定义的密码。至此mysql免安装版的配置已完成。"></a>接着我们来修改密码，执行mysql -u root -p登录mysql，回车后输入我们记下来的初始密码，回车后进入mysql命令，输入修改密码命令ALTER USER ‘root‘@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘xxx’;   xxx是你自己定义的密码。至此mysql免安装版的配置已完成。</h2><p>作者：格子衬衫_TJBB<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/xj627141903/article/details/80567961?utm_source=copy" target="_blank" rel="noopener">https://blog.csdn.net/xj627141903/article/details/80567961?utm_source=copy</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: true,
+        verify: false,
+        app_id: 'your appId',
+        app_key: 'your appkey',
+        placeholder: 'Please leave your footprints',
+        pageSize: '10',
+        avatar: '',
+        avatar_cdn: 'https://gravatar.loli.net/avatar/'
+    });
+</script>
+</div>
+<style>
+   #comment{
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
