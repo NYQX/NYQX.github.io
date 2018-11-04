@@ -140,18 +140,46 @@
 
         <div id="main" >
             <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >linuxyc</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >linux远程连接SSH、XRDP、SAMBA</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
                 <p>##SSH</p>
-<p>###1.查看ssh服务的状态<br>输入以下命令：<br>sudo service sshd status<br>如果出现<br>Loaded: error (Reason: No such file or directory)<br>提示的话，说名没有安装ssh服务，按照第二步：安装ssh服务。<br>如果出现<br>Active: inactive (dead)<br>说明已经安装了ssh服务，但是没有开启。按照第三步：开启ssh服务。</p>
-<p>###2安装ssh服务<br> sudo apt-get install sshd<br>或者<br>sudo apt-get install openssh-server（由osc网友 火耳提供）</p>
-<p>###3.开启ssh服务<br>在终端敲入以下命令：<br>sudo service sshd start<br>安装完成后查看服务是否启动<br>sudo ps -e |grep ssh<br>/etc/init.d/ssh status  或  ps -e | grep sshd</p>
-<p>###4.ifconfig<br>192.168.60.128</p>
-<p>###5.卸载ssh服务<br> 如果你使用的是debian，ubuntu，linux mint等系列的linux发行版，那么敲入以下命令：<br>sudo apt-get –purge remove sshd<br>然后就会提示卸载完成。<br><br></p>
+<p>###1.查看ssh服务的状态<br>输入以下命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service sshd status</span><br></pre></td></tr></table></figure></p>
+<p>如果出现：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Loaded: error (Reason: No such file or directory)</span><br></pre></td></tr></table></figure></p>
+<p>说明没有安装ssh服务。<br>如果出现：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Active: inactive (dead)</span><br></pre></td></tr></table></figure></p>
+<p>说明已经安装了ssh服务，但是没有开启。</p>
+<p>###2安装ssh服务<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install sshd</span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install openssh-server //由osc网友 火耳提供</span><br></pre></td></tr></table></figure></p>
+<p>###3.开启ssh服务<br>在终端敲入以下命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service sshd start</span><br></pre></td></tr></table></figure></p>
+<p>安装完成后查看服务是否启动<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo ps -e |grep ssh</span><br></pre></td></tr></table></figure></p>
+<p>###4.ifconfig查看ip地址</p>
+<p>###5.远程连接<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh 用户名@ip地址</span><br></pre></td></tr></table></figure></p>
+<p>可使用putty连接<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">exit() //退出</span><br></pre></td></tr></table></figure></p>
+<p>###6.卸载ssh服务<br>debian，ubuntu，linux mint等系列的linux发行版，敲入以下命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get –purge remove sshd</span><br></pre></td></tr></table></figure></p>
+<p>然后就会提示卸载完成。<br><br></p>
 <p>##XRDP</p>
-<p>###<br>安装samba：sudo apt-get install samba<br>安装smbclient：sudo apt-get install smbclient<br>vi /etc/samba/smb.conf 编辑smb.conf 文件<br>在配置文件的最末尾加上：<br>[share]<br>comment = Shared Folder require password<br>path = /home/share<br>public = yes<br>writable = yes<br>valid users = share<br>create mask = 0777<br>directory mask = 0777<br>force user = nobody<br>force group = nogroup<br>available = yes<br>browseable = yes<br>sudo smbpasswd -a share<br>文件夹框 \ip地址\share</p>
+<p>###1.设置系统允许进行远程控制<br>Desktop Sharing(桌面共享)</p>
+<p>####2.安装vncserver<br>输入以下命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install xrdp vnc4server xbase-clients</span><br></pre></td></tr></table></figure></p>
+<p>###3.安装dconf-editor(取消权限限制)<br>我们需要取消掉请求加密的功能，否则缺少这一步是无法远程上的，这个时候我们需要安装dconf-editor工具进行配置，输入以下命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install dconf-editor</span><br></pre></td></tr></table></figure></p>
+<p>安装完成后，打开dconf-editor工具，依次展开org-&gt;gnome-&gt;desktop-&gt;remote-access<br>取消 “requlre-encryption”的勾选</p>
+<p>###4.远程连接<br>Windows自带远程桌面控制(mstsc)进行访问：<br>模式【vnc-any】<br><br></p>
+<p>##SAMBA</p>
+<p>###1.安装samba<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install samba</span><br></pre></td></tr></table></figure></p>
+<p>###2.安装smbclient<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install smbclient</span><br></pre></td></tr></table></figure></p>
+<p>###3.编辑smb.conf 文件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi /etc/samba/smb.conf</span><br></pre></td></tr></table></figure></p>
+<p>在配置文件的最末尾加上：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[share]</span><br><span class="line">comment = Shared Folder require password</span><br><span class="line">path = /home/share</span><br><span class="line">public = yes</span><br><span class="line">writable = yes</span><br><span class="line">valid users = 用户名</span><br><span class="line">create mask = 0777</span><br><span class="line">directory mask = 0777</span><br><span class="line">force user = nobody</span><br><span class="line">force group = nogroup</span><br><span class="line">available = yes</span><br><span class="line">browseable = yes</span><br></pre></td></tr></table></figure></p>
+<p>重新启动samba：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo /etc/init.d/samba restart</span><br></pre></td></tr></table></figure></p>
+<p>###4.设置用户和密码<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo smbpasswd -a 用户名</span><br></pre></td></tr></table></figure></p>
+<p>###5.添加一个网络位置<br>计算机右键<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\\ip地址\share</span><br></pre></td></tr></table></figure></p>
+<p><br><br><br></p>
+<p>##附加</p>
+<p>###ubuntu如何删除xubuntu-destop并恢复原始界面<br>1)删除xfce和xubuntu<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get remove xfce4*</span><br><span class="line">sudo apt-get remove xubuntu*</span><br><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get clean</span><br></pre></td></tr></table></figure></p>
+<p>2)启动lightdm<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo dpkg-reconfigure lightdm</span><br></pre></td></tr></table></figure></p>
+<p>3)重写配置文件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install --reinstall light-locker</span><br></pre></td></tr></table></figure></p>
+<p>4)恢复原始登录界面<br>LightDM还支持“主题”，有的桌面环境使用LightDM-GTK的欢迎界面，而不是默认主题。<br>恢复LightDM主题最简单的方法是：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo gedit /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure></p>
+<p>不存在上面的文件,就创建。<br>当文件打开，更改其内容（或粘贴以下内容）：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[SeatDefaults] </span><br><span class="line">greeter-session=unity-greeter</span><br></pre></td></tr></table></figure></p>
+<p>5)DONE</p>
 
             </div>
 
