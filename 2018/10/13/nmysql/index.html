@@ -139,30 +139,25 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >初见mysql+Nacvicat</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(佐良娜.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >mysql配置+Nacvicat</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p>mysql配置：（免安装版）</p>
-<p>1.下载MySQL 8.0.11版本的mysql，官方地址</p>
-<p>2.下载后，将解压出来的文件放到你想放到的磁盘处（不想遇到管理员权限问题的童鞋那就尽量不要放到C盘），我下载解压后放到了F盘，并将文件名改成了MySQL。</p>
-<p>3.在MySQL文件夹下找到my.ini或my-default.ini，如果没有.ini结尾的文件那么就新增。新增内容为如下，注意basedir和datadir是我自己的路径位置，根据自己的定夺。记得新增一个文件Data文件夹</p>
-<p>[mysqld]</p>
-<h1 id="设置3306端口"><a href="#设置3306端口" class="headerlink" title="设置3306端口"></a>设置3306端口</h1><p>port=3306</p>
-<h1 id="设置mysql的安装目录"><a href="#设置mysql的安装目录" class="headerlink" title="设置mysql的安装目录"></a>设置mysql的安装目录</h1><p>basedir=F:\MySQL</p>
-<h1 id="设置mysql数据库的数据的存放目录"><a href="#设置mysql数据库的数据的存放目录" class="headerlink" title="设置mysql数据库的数据的存放目录"></a>设置mysql数据库的数据的存放目录</h1><p>datadir=F:\MySQL\Data</p>
-<h1 id="允许最大连接数"><a href="#允许最大连接数" class="headerlink" title="允许最大连接数"></a>允许最大连接数</h1><p>max_connections=200</p>
-<h1 id="允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统"><a href="#允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统" class="headerlink" title="允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统"></a>允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统</h1><p>max_connect_errors=10</p>
-<h1 id="服务端使用的字符集默认为UTF8"><a href="#服务端使用的字符集默认为UTF8" class="headerlink" title="服务端使用的字符集默认为UTF8"></a>服务端使用的字符集默认为UTF8</h1><p>character-set-server=utf8</p>
-<h1 id="创建新表时将使用的默认存储引擎"><a href="#创建新表时将使用的默认存储引擎" class="headerlink" title="创建新表时将使用的默认存储引擎"></a>创建新表时将使用的默认存储引擎</h1><p>default-storage-engine=INNODB</p>
-<h1 id="默认使用“mysql-native-password”插件认证"><a href="#默认使用“mysql-native-password”插件认证" class="headerlink" title="默认使用“mysql_native_password”插件认证"></a>默认使用“mysql_native_password”插件认证</h1><p>default_authentication_plugin=mysql_native_password<br>[mysql]</p>
-<h1 id="设置mysql客户端默认字符集"><a href="#设置mysql客户端默认字符集" class="headerlink" title="设置mysql客户端默认字符集"></a>设置mysql客户端默认字符集</h1><p>default-character-set=utf8<br>[client]</p>
-<h1 id="设置mysql客户端连接服务端时默认使用的端口"><a href="#设置mysql客户端连接服务端时默认使用的端口" class="headerlink" title="设置mysql客户端连接服务端时默认使用的端口"></a>设置mysql客户端连接服务端时默认使用的端口</h1><p>port=3306</p>
-<p>default-character-set=utf8</p>
-<p>4.cmd打开命令窗口，初始化mysql，初始化语句：mysqld –defaults-file=F:\MySQL\my.ini –initialize –console，注意该语句中的路径为自己的my.ini的所在路径。</p>
-<p>5.执行该语句后会出下日志内容，找到root@localhost，冒号后面的为mysql的初始密码，一定要先记住，下面用来登录修改密码。（图片是我网上摘取别人的，偷个懒，图片中已经写的很清晰了）</p>
-<h2 id="接着我们来修改密码，执行mysql-u-root-p登录mysql，回车后输入我们记下来的初始密码，回车后进入mysql命令，输入修改密码命令ALTER-USER-‘root‘-’localhost’-IDENTIFIED-WITH-mysql-native-password-BY-‘xxx’-xxx是你自己定义的密码。至此mysql免安装版的配置已完成。"><a href="#接着我们来修改密码，执行mysql-u-root-p登录mysql，回车后输入我们记下来的初始密码，回车后进入mysql命令，输入修改密码命令ALTER-USER-‘root‘-’localhost’-IDENTIFIED-WITH-mysql-native-password-BY-‘xxx’-xxx是你自己定义的密码。至此mysql免安装版的配置已完成。" class="headerlink" title="接着我们来修改密码，执行mysql -u root -p登录mysql，回车后输入我们记下来的初始密码，回车后进入mysql命令，输入修改密码命令ALTER USER ‘root‘@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘xxx’;   xxx是你自己定义的密码。至此mysql免安装版的配置已完成。"></a>接着我们来修改密码，执行mysql -u root -p登录mysql，回车后输入我们记下来的初始密码，回车后进入mysql命令，输入修改密码命令ALTER USER ‘root‘@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘xxx’;   xxx是你自己定义的密码。至此mysql免安装版的配置已完成。</h2><p>作者：格子衬衫_TJBB<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/xj627141903/article/details/80567961?utm_source=copy" target="_blank" rel="noopener">https://blog.csdn.net/xj627141903/article/details/80567961?utm_source=copy</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+                <h2 id="mysql免安装版配置"><a href="#mysql免安装版配置" class="headerlink" title="mysql免安装版配置"></a>mysql免安装版配置</h2><h4 id="1-下载MySQL-8-0-11版本的mysql。"><a href="#1-下载MySQL-8-0-11版本的mysql。" class="headerlink" title="1.下载MySQL 8.0.11版本的mysql。"></a>1.下载MySQL 8.0.11版本的mysql。</h4><h4 id="2-解压，记文件夹名mysql。"><a href="#2-解压，记文件夹名mysql。" class="headerlink" title="2.解压，记文件夹名mysql。"></a>2.解压，记文件夹名mysql。</h4><h4 id="3-在mysql文件夹下找到my-ini或my-default-ini，如果没有-ini结尾的文件那么就新增。新增内容为如下，注意basedir和datadir的路径。若没有Data文件夹，自行新增。"><a href="#3-在mysql文件夹下找到my-ini或my-default-ini，如果没有-ini结尾的文件那么就新增。新增内容为如下，注意basedir和datadir的路径。若没有Data文件夹，自行新增。" class="headerlink" title="3.在mysql文件夹下找到my.ini或my-default.ini，如果没有.ini结尾的文件那么就新增。新增内容为如下，注意basedir和datadir的路径。若没有Data文件夹，自行新增。"></a>3.在mysql文件夹下找到my.ini或my-default.ini，如果没有.ini结尾的文件那么就新增。新增内容为如下，注意basedir和datadir的路径。若没有Data文件夹，自行新增。</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line"># 设置3306端口</span><br><span class="line">port=3306</span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir=E:\MySQL</span><br><span class="line"># 设置mysql数据库的数据的存放目录</span><br><span class="line">datadir=E:\MySQL\Data</span><br><span class="line"># 允许最大连接数</span><br><span class="line">max_connections=200</span><br><span class="line"># 允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统</span><br><span class="line">max_connect_errors=10</span><br><span class="line"># 服务端使用的字符集默认为UTF8</span><br><span class="line">character-set-server=utf8</span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line">default-storage-engine=INNODB</span><br><span class="line"># 默认使用“mysql_native_password”插件认证</span><br><span class="line">default_authentication_plugin=mysql_native_password</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line"># 设置mysql客户端默认字符集</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[client]</span><br><span class="line"># 设置mysql客户端连接服务端时默认使用的端口</span><br><span class="line">port=3306</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
+<h4 id="4-cmd打开命令窗口，初始化mysql，初始化语句："><a href="#4-cmd打开命令窗口，初始化mysql，初始化语句：" class="headerlink" title="4.cmd打开命令窗口，初始化mysql，初始化语句："></a>4.cmd打开命令窗口，初始化mysql，初始化语句：</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysqld --defaults-file=E:\MySQL\my.ini --initialize --console，注意该语句中的路径为自己的my.ini的所在路径。</span><br></pre></td></tr></table></figure>
+<p>执行该语句后会出现日志内容，找到root@localhost，<br>冒号后面的为mysql的初始密码，一定要先记住，以登录修改密码。</p>
+<h4 id="5-修改密码"><a href="#5-修改密码" class="headerlink" title="5.修改密码"></a>5.修改密码</h4><p>登录mysql<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure></p>
+<p>输入修改密码命令<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;新密码&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>更新授权<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">FLUSH PRIVILEGES;//以防重启无法登录</span><br></pre></td></tr></table></figure></p>
+<p>至此mysql免安装版的配置已完成。</p>
+<h4 id="6-附加："><a href="#6-附加：" class="headerlink" title="6.附加："></a>6.附加：</h4><p>用户权限<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use mysql //选择数据库</span><br><span class="line">user,host,grant_priv from user; //查看权限</span><br><span class="line">update user set grant_priv=&apos;Y&apos; where user=&apos;root&apos;; //修改权限</span><br></pre></td></tr></table></figure></p>
+<p><br><br><br></p>
+<h2 id="Navicat"><a href="#Navicat" class="headerlink" title="Navicat"></a>Navicat</h2><h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h3><p>Navicat是一套快速、可靠并价格相当便宜的数据库管理工具，专为简化数据库的管理及降低系统管理成本而设，即可视化数据库。</p>
+<h3 id="2-连接数据库"><a href="#2-连接数据库" class="headerlink" title="2.连接数据库"></a>2.连接数据库</h3><p>安装后，点击工具栏<strong>【连接】</strong><br>填写连接信息，点击<strong>【连接测试】</strong><br>若测试成功，确定连接即可<br><img src="/2018/10/13/nmysql/1.png" alt=".."></p>
+<hr>
+<p><br></p>
+<h3 id="╹▽╹"><a href="#╹▽╹" class="headerlink" title="(*╹▽╹*)"></a>(*╹▽╹*)</h3><h2 id="久违的镇楼！"><a href="#久违的镇楼！" class="headerlink" title="久违的镇楼！"></a>久违的镇楼！</h2><p><img src="/2018/10/13/nmysql/佐良娜1.jpg" alt="佐良娜"></p>
 
             </div>
 
