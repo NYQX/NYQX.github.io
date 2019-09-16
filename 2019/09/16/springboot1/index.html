@@ -1,0 +1,1121 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      记Springboot学习（一） | NYQX
+    
+  </title>
+  <meta name="author" content="nyqx">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
+  
+  <!-- jquery -->
+	<script src="/js/jquery.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="random" data-normal-src="/img/1.jpg" data-random-max="5" data-random-src="/img/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+					
+						NYQX
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" ></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			当前文章&nbsp;:&nbsp;《记Springboot学习（一）》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/2019/09/16/springboot1/" itemprop="url">
+		记Springboot学习（一）
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	发布于
+
+	<a href="/2019/09/16/springboot1/" itemprop="url">
+		<time datetime="2019-09-16T03:27:11.000Z" itemprop="datePublished">
+	  		2019-09-16
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	更新于
+
+	<a href="/2019/09/16/springboot1/" itemprop="url">
+		<time datetime="2019-09-16T03:27:11.000Z" itemprop="dateUpdated">
+	  		2019-09-16
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+			
+	
+		<a href="/tags/springboot/" class=" ">
+			springboot
+		</a>
+	
+		
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<h4 id="一-项目初始化"><a href="#一-项目初始化" class="headerlink" title="一. 项目初始化"></a>一. 项目初始化</h4><ol>
+<li>新建项目（New Project），选择Spring Initializr，即Spring Boot，下一步全部默认值，点击Next。也可适当修改路径名，这里为 <code>com.springboot.study</code> 。</li>
+</ol>
+<p><img src="/2019/09/16/springboot1/1.png" alt="springboot"></p>
+<p><img src="/2019/09/16/springboot1/2.png" alt="springboot"></p>
+<ol start="2">
+<li>选择Web选项卡下的Web。</li>
+</ol>
+<p><img src="/2019/09/16/springboot1/3.png" alt="springboot"></p>
+<ol start="3">
+<li>此时目录结构如下：</li>
+</ol>
+<p><img src="/2019/09/16/springboot1/4.png" alt="springboot"></p>
+<h4 id="二-controller层的建立"><a href="#二-controller层的建立" class="headerlink" title="二. controller层的建立"></a>二. controller层的建立</h4><p>在 <code>com.springboot.study</code> 下，新建controller包（控制层），来个 <code>HelloController.java</code> 。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springboot.study.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/hello"</span>)<span class="comment">// 建立请求映射</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello springboot"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>@RestController 注解声明这是controller层</p>
+<p>@RequestMapping 注解建立请求的映射路径</p>
+<p>可以将鼠标光标移至相关代码下方，通过 <code>Alt+Enter</code> 键来快速导包</p>
+</blockquote>
+<p>直接运行。</p>
+<p><img src="/2019/09/16/springboot1/5.png" alt="springboot"></p>
+<p>访问 <a href="http://localhost:8080/hello" target="_blank" rel="noopener">http://localhost:8080/hello</a>，成功。</p>
+<p><img src="/2019/09/16/springboot1/6.png" alt="springboot"></p>
+<h4 id="三-bean层的建立"><a href="#三-bean层的建立" class="headerlink" title="三. bean层的建立"></a>三. bean层的建立</h4><ol>
+<li><p>在 <code>com.springboot.study</code> 下，新建bean包（实体层），来个 <code>ReturnInfo.java</code> ，作为返回信息的封装。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springboot.study.bean;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReturnInfo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer code;</span><br><span class="line">    <span class="keyword">private</span> Object data;</span><br><span class="line">    <span class="keyword">private</span> String message;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ReturnInfo</span><span class="params">(Integer code, Object data, String message)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.code = code;</span><br><span class="line">        <span class="keyword">this</span>.data = data;</span><br><span class="line">        <span class="keyword">this</span>.message = message;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Getter 和 Setter方法略，后同。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>可以通过 <code>Alt+Insert</code> 键来快速生成Constructor，Getter和Setter方法，</p>
+</blockquote>
+<p>再在 <code>HelloController.java</code> 上</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/getReturnInfo"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> ReturnInfo <span class="title">getHello</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ReturnInfo(<span class="number">0</span>, <span class="keyword">new</span> Date(), <span class="keyword">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行，得到：</p>
+</li>
+</ol>
+<p>   <img src="/2019/09/16/springboot1/7.png" alt="springboot"></p>
+<p>   这里选择将返回信息封装为三个部分：code用于判断操作的成功与失败，data储存相应的返回信息，message处于两者的之间，既是code的补充，也是data的精简。</p>
+<ol start="2">
+<li><p>值得一提的是，message为null值也同样返回了，在某些时候，这样也许会有些难受，此时可以借用alibaba的fastjson包来进行“美化”。</p>
+<p>首先导包，在 <code>pom.xml</code> 文件里引入依赖：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--fastjosn依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>fastjson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.47<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其次，在 <code>Application.java</code> 文件里写入配置项：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudyApplication</span> <span class="keyword">extends</span> <span class="title">WebMvcConfigurationSupport</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configureMessageConverters</span><span class="params">(List&lt;HttpMessageConverter&lt;?&gt;&gt; converters)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1、定义一个convert转换消息的对象</span></span><br><span class="line">        FastJsonHttpMessageConverter fastConverter = <span class="keyword">new</span> FastJsonHttpMessageConverter();</span><br><span class="line">        <span class="comment">//2、添加fastjson的配置信息</span></span><br><span class="line">        FastJsonConfig fastJsonConfig = <span class="keyword">new</span> FastJsonConfig();</span><br><span class="line">        fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);</span><br><span class="line">        <span class="comment">//3、在convert中添加配置信息</span></span><br><span class="line">        fastConverter.setFastJsonConfig(fastJsonConfig);</span><br><span class="line">        <span class="comment">//4、将convert添加到converters中</span></span><br><span class="line">        converters.add(fastConverter);</span><br><span class="line">        <span class="comment">//5、追加默认转换器</span></span><br><span class="line">        <span class="keyword">super</span>.addDefaultHttpMessageConverters(converters);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(StudyApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再次运行，即可得到：</p>
+<p><img src="/2019/09/16/springboot1/8.png" alt="springboot"></p>
+<p>当然，这一步可有可无。</p>
+</li>
+<li><p>学习至此，实际上算是完成了服务端对客户端简单的服务提供，但很显然现在还缺少最重要的一环，就是真实的数据。所以，理所当然，下一步应当是建立起服务端与数据库的连接。</p>
+<p>这里选择使用mysql作为数据库，使用Java Persistence API（简称jpa）进行连接。</p>
+<p>首先导包，在 <code>pom.xml</code> 文件里引入依赖。注意mysql和mysql驱动的的版本对应。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.reporting.outputEncoding</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mysql-connector.version</span>&gt;</span>8.0.11<span class="tag">&lt;/<span class="name">mysql-connector.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--mysql驱动--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;mysql-connector.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--jpa依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-jpa<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其次，在 <code>application.properties</code> 文件里写入配置。注意数据库账号和密码的对应。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#数据库连接信息</span><br><span class="line">spring.datasource.url = jdbc:mysql://localhost:3306/study?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC&amp;useSSL=false</span><br><span class="line">spring.datasource.username = root</span><br><span class="line">spring.datasource.password = 123456</span><br><span class="line">#驱动名</span><br><span class="line">spring.datasource.driverClassName = com.mysql.cj.jdbc.Driver</span><br><span class="line">#运行时的端口号</span><br><span class="line">server.port = 8080</span><br><span class="line">#SrpingBoot 2.0 版本中，Hibernate 创建数据表的时候，默认的数据库存储引擎选择的是 MyISAM （之前好像是 InnoDB，这点比较诡异）。这个参数是在建表的时候，将默认的存储引擎切换为 InnoDB 用的。</span><br><span class="line">spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect</span><br><span class="line">#ddl-auto:update----每次运行程序，没有表格会新建表格，表内有数据不会清空，只会更新</span><br><span class="line">spring.jpa.hibernate.ddl-auto=update</span><br><span class="line">#是否在控制台展示sql</span><br><span class="line">spring.jpa.show-sql=true</span><br><span class="line">spring.jpa.database=mysql</span><br><span class="line">#初始化数据库字段的时候采用遇大写字母加下划线的命名规则，如userId映射为user_id; 另一种命名规则PhysicalNamingStrategyStandardImpl则为保持原始的名字</span><br><span class="line">spring.jpa.hibernate.naming.physical-strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy</span><br></pre></td></tr></table></figure>
+<p>接着，新建一个bean类，<code>UserInfo.java</code> 。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springboot.study.bean;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.persistence.Entity;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.Id;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.Table;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table</span>(name = <span class="string">"user_info"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserInfo</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="keyword">private</span> String userId;</span><br><span class="line">    <span class="keyword">private</span> String userName;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">    <span class="keyword">private</span> String phoneNumber;</span><br><span class="line">    <span class="keyword">private</span> String headPic;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Getter 和 Setter方法略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>@Entity 注解声明这是实体类，默认实体类名对应数据库的表名。</p>
+<p>@Table 注解用于说明指定不同表名。name指明表名。</p>
+<p>@Id 注解声明主键</p>
+</blockquote>
+<p>再次运行，可以发现数据库里已经自动建表：</p>
+<p><img src="/2019/09/16/springboot1/9.png" alt="springboot"></p>
+<p>另外，与 <code>@Id</code> 经常搭配使用的还有两个注解：<code>@GeneratedValue</code>、<code>@GenericGenerator</code>。</p>
+<blockquote>
+<p>@GeneratorValue注解—-JPA通用策略生成器</p>
+<p>@GenericGenerator注解—-自定义主键生成策略</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Id</span></span><br><span class="line"><span class="meta">@GeneratedValue</span>(generator = <span class="string">"uuid"</span>)</span><br><span class="line"><span class="meta">@GenericGenerator</span>(name = <span class="string">"uuid"</span>, strategy = <span class="string">"uuid"</span>)</span><br><span class="line"><span class="keyword">private</span> String userId;</span><br></pre></td></tr></table></figure>
+<p>这里使用uuid来作为主键。uuid是由计算机生成的一串字符串，重复的概率极低。实际上uuid已经不适合作为主键，因为它的性能并不好，只是uuid是自带的Id生成策略，正好用于初学。</p>
+</li>
+</ol>
+<h4 id="四-mapper层的建立"><a href="#四-mapper层的建立" class="headerlink" title="四. mapper层的建立"></a>四. mapper层的建立</h4><ol>
+<li><p>在 <code>com.springboot.study</code> 下，新建mapper包（持久层），来个 <code>UserMapper.java</code> 。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springboot.study.mapper;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.springboot.study.bean.UserInfo;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.jpa.repository.JpaRepository;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Repository;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">UserInfo</span>, <span class="title">String</span>&gt; </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>@Repository 注解声明这是dao层。即这里的mapper层。</p>
+<p>继承的JpaRepository是简单查询的接口，可以减少SQL语句的书写。与其对应的还有JpaSpecificationExecutor复杂查询。</p>
+</blockquote>
+</li>
+<li><p>新建 <code>UserController.java</code> 来测试一下。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springboot.study.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.springboot.study.bean.ReturnInfo;</span><br><span class="line"><span class="keyword">import</span> com.springboot.study.bean.UserInfo;</span><br><span class="line"><span class="keyword">import</span> com.springboot.study.mapper.UserMapper;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.PostMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestBody;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/user"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</span><br><span class="line"><span class="comment">//    自动装配，变量形式注入</span></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 新建用户</span></span><br><span class="line">    <span class="meta">@PostMapping</span>()</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ReturnInfo <span class="title">createUser</span><span class="params">(@RequestBody UserInfo userInfo)</span> </span>&#123;</span><br><span class="line">        userMapper.saveAndFlush(userInfo);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ReturnInfo(<span class="number">0</span>, <span class="keyword">null</span>, <span class="string">"success"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>@Autowired 注解可以对类成员变量、方法及构造函数进行标注，完成自动装配的工作。</p>
+<p>@PostMapping 注解是 @RequestMapping(value = “/“, method = RequestMethod.POST) 的简写。</p>
+</blockquote>
+<p>运行，使用postman测试。postman是一款接口测试软件，安装部分不多作介绍。</p>
+<p><img src="/2019/09/16/springboot1/10.png" alt="springboot"></p>
+<p>提交。</p>
+<p><img src="/2019/09/16/springboot1/11.png" alt="springboot"></p>
+<p>可以看到数据库也已经新增了这一条记录。</p>
+<p><img src="/2019/09/16/springboot1/12.png" alt="springboot"></p>
+<p>此时，我们其实已经完成了简单的用户注册功能，算是成功入门。不妨总结一下。</p>
+<p>目录结构如下：</p>
+<p><img src="/2019/09/16/springboot1/13.png" alt="springboot"></p>
+<p>清晰明了，bean层负责项目的实体类，并对应数据表的连接；controller层负责业务逻辑的控制，以交互客户端；mapper层负责数据库操作。当然，后续还有其他层面的划分，暂不细说。</p>
+<p>不过，细心的话，会发现每次成功的返回都要 <code>new ReturnInfo(0, null, &quot;success&quot;)</code>，这显然不友好，所以，通常也会再将其封装一次，作为返回信息工具类。</p>
+<h4 id="五-utils包的建立"><a href="#五-utils包的建立" class="headerlink" title="五. utils包的建立"></a>五. utils包的建立</h4><ol>
+<li><p>在 <code>com.springboot.study</code> 下，新建utils包（工具类集合），来个 <code>ReturnInfoUtils.java</code> 。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springboot.study.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.springboot.study.bean.ReturnInfo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReturnInfoUtils</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ReturnInfo <span class="title">success</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ReturnInfo(<span class="number">0</span>, <span class="keyword">null</span>, <span class="string">"success"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ReturnInfo <span class="title">success</span><span class="params">(Object data)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ReturnInfo(<span class="number">0</span>, data, <span class="string">"success"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+<ol start="2">
+<li><p>另外，操作失败的信息返回也封装一下，这里将其封装为一个枚举类。在utils里新建一个 <code>Error.java</code> 。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springboot.study.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Error &#123;</span><br><span class="line">    FORMAT_ERROR(<span class="number">4000</span>, <span class="string">"数据格式错误"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 成员变量</span></span><br><span class="line">    <span class="keyword">private</span> Integer code;</span><br><span class="line">    <span class="keyword">private</span> String message;</span><br><span class="line"></span><br><span class="line">    Error(Integer code, String message) &#123;</span><br><span class="line">        <span class="keyword">this</span>.code = code;</span><br><span class="line">        <span class="keyword">this</span>.message = message;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// getter 和 setter </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>然后，同样，再次封装进 `ReturnInfoUtils.java` 。
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ReturnInfo <span class="title">error</span><span class="params">(Error error)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ReturnInfo(error.getCode(), <span class="keyword">null</span>, error.getMessage());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ReturnInfo <span class="title">error</span><span class="params">(Error error, Object data)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ReturnInfo(error.getCode(), data, error.getMessage());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><ol start="3">
+<li><p>测试一下，同时将用户新建的接口完善一下。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> com.springboot.study.utils.Error;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新建用户</span></span><br><span class="line"><span class="meta">@PostMapping</span>()</span><br><span class="line"><span class="function"><span class="keyword">public</span> ReturnInfo <span class="title">createUser</span><span class="params">(@RequestBody UserInfo userInfo)</span> </span>&#123;</span><br><span class="line">    Map&lt;String, String&gt; map = isFormat(userInfo);</span><br><span class="line">    <span class="keyword">if</span>(!map.isEmpty()) &#123;</span><br><span class="line">        <span class="comment">// 注意Error的导入</span></span><br><span class="line">        <span class="keyword">return</span> ReturnInfoUtils.error(Error.FORMAT_ERROR, map);</span><br><span class="line">    &#125;</span><br><span class="line">    userMapper.saveAndFlush(userInfo);</span><br><span class="line">    <span class="keyword">return</span> ReturnInfoUtils.success();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 表单的验证</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Map&lt;String, String&gt; <span class="title">isFormat</span><span class="params">(UserInfo userInfo)</span> </span>&#123;</span><br><span class="line">    Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="comment">// 判断用户名是否为空和是否格式正确</span></span><br><span class="line">    <span class="keyword">if</span> (StringUtils.isEmpty(userInfo.getUserName()) || !checkRealName(userInfo.getUserName())) &#123;</span><br><span class="line">        map.put(<span class="string">"userName"</span>, <span class="string">"wrong"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 判断用户名是否存在，以保证后续登录的唯一性</span></span><br><span class="line">    <span class="keyword">if</span>(userMapper.countByUserName(userInfo.getUserName()) &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            map.put(<span class="string">"userName"</span>, <span class="string">"exist"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span> (StringUtils.isEmpty(userInfo.getPassword())) &#123;</span><br><span class="line">        map.put(<span class="string">"password"</span>, <span class="string">"wrong"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (StringUtils.isEmpty(userInfo.getPhoneNumber()) || !checkPhoneNumber(userInfo.getPhoneNumber())) &#123;</span><br><span class="line">        map.put(<span class="string">"phoneNumber"</span>, <span class="string">"wrong"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> map;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//检查手机号码合法性</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Boolean <span class="title">checkPhoneNumber</span><span class="params">(String phoneNumber)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> phoneNumber.matches(<span class="string">"^1[3456789]\\d&#123;9&#125;$"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//检查姓名合法性</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Boolean <span class="title">checkRealName</span><span class="params">(String realName)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> realName.matches(<span class="string">"^[\\u4E00-\\u9FA5A-Za-z]+$"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">   <span class="keyword">package</span> com.springboot.study.mapper;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">UserInfo</span>, <span class="title">String</span>&gt; </span>&#123;</span><br><span class="line">       <span class="comment">// 根据用户名查询用户数量，以判断用户是否存在</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countByUserName</span><span class="params">(String userName)</span></span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</code></pre>   <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">   </span><br><span class="line">运行测试：</span><br><span class="line">   </span><br><span class="line">   ![springboot](./springboot1/14.png)</span><br><span class="line">   </span><br><span class="line">   ![springboot](./springboot1/15.png)</span><br><span class="line">   </span><br><span class="line">   成功。</span><br><span class="line">   </span><br><span class="line">   至此，springboot学习（一）结束。</span><br><span class="line"></span><br><span class="line">#### 六. （选学）snowflake 生成Id策略</span><br><span class="line"></span><br><span class="line">		snowflake 算法是 twitter 开源的分布式 Id 生成算法，一个 64 位的 long 型的 Id，1 个 bit 是不用的，用其中的 41 bit 作为毫秒数，用 10 bit 作为工作机器 Id，12 bit 作为序列号。</span><br><span class="line"></span><br><span class="line">1. 在utils里，新建 `SnowflakeId.java` 。</span><br><span class="line"></span><br><span class="line">   ~~~java</span><br><span class="line">   package com.springboot.study.utils;</span><br><span class="line">   </span><br><span class="line">   import org.hibernate.HibernateException;</span><br><span class="line">   import org.hibernate.engine.spi.SharedSessionContractImplementor;</span><br><span class="line">   import org.hibernate.id.IdentityGenerator;</span><br><span class="line">   </span><br><span class="line">   import java.io.Serializable;</span><br><span class="line">   </span><br><span class="line">   // Long型继承IdentityGenerator，String型继承UUIDGenerator</span><br><span class="line">   public class SnowflakeId extends IdentityGenerator &#123;</span><br><span class="line">       @Override</span><br><span class="line">       public Serializable generate(SharedSessionContractImplementor session, Object object) throws HibernateException &#123;</span><br><span class="line">           return getId();</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">       // ==============================Fields===========================================</span><br><span class="line">       /**</span><br><span class="line">        * 开始时间截 (2015-01-01)</span><br><span class="line">        */</span><br><span class="line">       private static final long TWEPOCH = 1420041600000L;</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 机器id所占的位数</span><br><span class="line">        */</span><br><span class="line">       private static final long WORKER_ID_BITS = 5L;</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 数据标识id所占的位数</span><br><span class="line">        */</span><br><span class="line">       private static final long DATA_CENTER_ID_BITS = 5L;</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 支持的最大机器id，结果是31 (这个移位算法可以很快的计算出几位二进制数所能表示的最大十进制数)</span><br><span class="line">        */</span><br><span class="line">       private static final long MAX_WORKER_ID = -1L ^ (-1L &lt;&lt; WORKER_ID_BITS);</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 支持的最大数据标识id，结果是31</span><br><span class="line">        */</span><br><span class="line">       private static final long MAX_DATA_CENTER_ID = -1L ^ (-1L &lt;&lt; DATA_CENTER_ID_BITS);</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 序列在id中占的位数</span><br><span class="line">        */</span><br><span class="line">       private static final long SEQUENCE_BITS = 12L;</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 机器ID向左移12位</span><br><span class="line">        */</span><br><span class="line">       private static final long WORKER_ID_SHIFT = SEQUENCE_BITS;</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 数据标识id向左移17位(12+5)</span><br><span class="line">        */</span><br><span class="line">       private static final long DATA_CENTER_ID_SHIFT = SEQUENCE_BITS + WORKER_ID_BITS;</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 时间截向左移22位(5+5+12)</span><br><span class="line">        */</span><br><span class="line">       private static final long TIMESTAMP_LEFT_SHIFT = SEQUENCE_BITS + WORKER_ID_BITS + DATA_CENTER_ID_BITS;</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 生成序列的掩码，这里为4095 (0b111111111111=0xfff=4095)</span><br><span class="line">        */</span><br><span class="line">       private static final long SEQUENCE_MASK = -1L ^ (-1L &lt;&lt; SEQUENCE_BITS);</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 工作机器ID(0~31)</span><br><span class="line">        */</span><br><span class="line">       private static long workerId;</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 数据中心ID(0~31)</span><br><span class="line">        */</span><br><span class="line">       private static long datacenterId;</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 毫秒内序列(0~4095)</span><br><span class="line">        */</span><br><span class="line">       private static long sequence = 0L;</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 上次生成ID的时间截</span><br><span class="line">        */</span><br><span class="line">       private static long lastTimestamp = -1L;</span><br><span class="line">   </span><br><span class="line">       //==============================Constructors=====================================</span><br><span class="line">   </span><br><span class="line">       public SnowflakeId() &#123;</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">       private static SnowflakeId snowflakeId=null;</span><br><span class="line">   </span><br><span class="line">       public static synchronized SnowflakeId getInstance()&#123;</span><br><span class="line">           if(snowflakeId==null)&#123;</span><br><span class="line">               snowflakeId=new SnowflakeId();</span><br><span class="line">           &#125;</span><br><span class="line">           return snowflakeId;</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 构造函数</span><br><span class="line">        *</span><br><span class="line">        * @param workerId     工作ID (0~31)</span><br><span class="line">        * @param datacenterId 数据中心ID (0~31)</span><br><span class="line">        */</span><br><span class="line">       private SnowflakeId(long workerId, long datacenterId) &#123;</span><br><span class="line">           if (workerId &gt; MAX_WORKER_ID || workerId &lt; 0) &#123;</span><br><span class="line">               throw new IllegalArgumentException(String.format(&quot;worker Id can&apos;t be greater than %d or less than 0&quot;, MAX_WORKER_ID));</span><br><span class="line">           &#125;</span><br><span class="line">           if (datacenterId &gt; MAX_DATA_CENTER_ID || datacenterId &lt; 0) &#123;</span><br><span class="line">               throw new IllegalArgumentException(String.format(&quot;datacenter Id can&apos;t be greater than %d or less than 0&quot;, MAX_DATA_CENTER_ID));</span><br><span class="line">           &#125;</span><br><span class="line">           SnowflakeId.workerId = workerId;</span><br><span class="line">           SnowflakeId.datacenterId = datacenterId;</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">       // ==============================Methods==========================================</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 获得下一个ID (该方法是线程安全的)</span><br><span class="line">        *</span><br><span class="line">        * @return SnowflakeId</span><br><span class="line">        */</span><br><span class="line">       public static synchronized long getId() &#123;</span><br><span class="line">           long timestamp = timeGen();</span><br><span class="line">   </span><br><span class="line">           //如果当前时间小于上一次ID生成的时间戳，说明系统时钟回退过这个时候应当抛出异常</span><br><span class="line">           if (timestamp &lt; lastTimestamp) &#123;</span><br><span class="line">               throw new RuntimeException(</span><br><span class="line">                       String.format(&quot;Clock moved backwards.  Refusing to generate id for %d milliseconds&quot;, lastTimestamp - timestamp));</span><br><span class="line">           &#125;</span><br><span class="line">   </span><br><span class="line">           //如果是同一时间生成的，则进行毫秒内序列</span><br><span class="line">           if (lastTimestamp == timestamp) &#123;</span><br><span class="line">               sequence = (sequence + 1) &amp; SEQUENCE_MASK;</span><br><span class="line">               //毫秒内序列溢出</span><br><span class="line">               if (sequence == 0) &#123;</span><br><span class="line">                   //阻塞到下一个毫秒,获得新的时间戳</span><br><span class="line">                   timestamp = tilNextMillis(lastTimestamp);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           //时间戳改变，毫秒内序列重置</span><br><span class="line">           else &#123;</span><br><span class="line">               sequence = 0L;</span><br><span class="line">           &#125;</span><br><span class="line">   </span><br><span class="line">           //上次生成ID的时间截</span><br><span class="line">           lastTimestamp = timestamp;</span><br><span class="line">   </span><br><span class="line">           //移位并通过或运算拼到一起组成64位的ID</span><br><span class="line">           return ((timestamp - TWEPOCH) &lt;&lt; TIMESTAMP_LEFT_SHIFT)</span><br><span class="line">                   | (datacenterId &lt;&lt; DATA_CENTER_ID_SHIFT)</span><br><span class="line">                   | (workerId &lt;&lt; WORKER_ID_SHIFT)</span><br><span class="line">                   | sequence;</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 阻塞到下一个毫秒，直到获得新的时间戳</span><br><span class="line">        *</span><br><span class="line">        * @param lastTimestamp 上次生成ID的时间截</span><br><span class="line">        * @return 当前时间戳</span><br><span class="line">        */</span><br><span class="line">       protected static long tilNextMillis(long lastTimestamp) &#123;</span><br><span class="line">           long timestamp = timeGen();</span><br><span class="line">           while (timestamp &lt;= lastTimestamp) &#123;</span><br><span class="line">               timestamp = timeGen();</span><br><span class="line">           &#125;</span><br><span class="line">           return timestamp;</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">       /**</span><br><span class="line">        * 返回以毫秒为单位的当前时间</span><br><span class="line">        *</span><br><span class="line">        * @return 当前时间(毫秒)</span><br><span class="line">        */</span><br><span class="line">       protected static long timeGen() &#123;</span><br><span class="line">           return System.currentTimeMillis();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>添加注解。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Id</span></span><br><span class="line"><span class="meta">@GeneratedValue</span>(generator = <span class="string">"snowflakeId"</span>)</span><br><span class="line"><span class="meta">@GenericGenerator</span>(name = <span class="string">"snowflakeId"</span>, strategy = <span class="string">"com.springboot.study.utils.SnowflakeId"</span>)</span><br><span class="line"><span class="keyword">private</span> Long userId;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<pre><code>&gt; 注意Long型的数据类型，strategy 需要写全包名
+</code></pre><ol start="3">
+<li><p>运行测试。</p>
+<p><img src="/2019/09/16/springboot1/16.png" alt="springboot"></p>
+<p>可以看到Id已经变成了snowflakeId，成功。因为此时的数据库的字段设置类型是varchar，所以兼容uuid，可以选择删表重建，或修改相应字段的数据类型。</p>
+</li>
+</ol>
+<hr>
+<h3 id="德狗子镇楼"><a href="#德狗子镇楼" class="headerlink" title="德狗子镇楼"></a>德狗子镇楼</h3><p><img src="/2019/09/16/springboot1/de.jpg" alt="springboot"></p>
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/hexo/img/cart_img/springboot1.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
+				<div>分享</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+		
+			<a href="/2018/10/31/linuxyc/" title="linux远程连接SSH、XRDP、SAMBA" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2018/10/31/linuxyc/" title="linux远程连接SSH、XRDP、SAMBA">
+								linux远程连接SSH、XRDP、SAMBA			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 31日, 2018				
+							</p>
+							<p class="relate-post-content">
+								q
+SSH1.查看ssh服务的状态输入以下命令：sudo service sshd status
+如果出现：Loaded: error (Reason: No such file or directory)
+说明没有安装ssh服务。如...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2018/10/31/linuxyc/" title="linux远程连接SSH、XRDP、SAMBA">				
+								
+								<img class="lazy" src="/hexo/img/placeholder.jpg" data-src="/hexo/img/cart_cover.jpg" alt="linux远程连接SSH、XRDP、SAMBA"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2018/10/13/nmysql/" title="mysql配置+Nacvicat">
+								mysql配置+Nacvicat			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 13日, 2018				
+							</p>
+							<p class="relate-post-content">
+								mysql免安装版配置
+1.下载MySQL 8.0.11版本的mysql。2.解压，记文件夹名mysql。3.在mysql文件夹下找到my.ini或my-default.ini，如果没有.ini结尾的文件那么就新增。新增内容为如下，注...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2018/10/13/nmysql/" title="mysql配置+Nacvicat">				
+								
+								<img class="lazy" src="/hexo/img/placeholder.jpg" data-src="/hexo/img/cart_cover.jpg" alt="mysql配置+Nacvicat"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2018/07/10/file/" title="PHP伪协议+PHP文件包含">
+								PHP伪协议+PHP文件包含			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 10日, 2018				
+							</p>
+							<p class="relate-post-content">
+								前言&emsp;&emsp;电脑一卡，写了两遍半。。。&emsp;&emsp;活着好累。。。
+
+
+
+
+1、PHP伪协议&emsp;&emsp;这里说到的协议不是指网络上的TCP/IP协议，而是操作系统提供支持的一种协议，类似标准协议H...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2018/07/10/file/" title="PHP伪协议+PHP文件包含">				
+								
+								<img class="lazy" src="/hexo/img/placeholder.jpg" data-src="/hexo/img/cart_cover.jpg" alt="PHP伪协议+PHP文件包含"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2018/07/09/xss/" title="初见XSS">
+								初见XSS			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 9日, 2018				
+							</p>
+							<p class="relate-post-content">
+								前言&emsp;&emsp;懒癌晚期。。。
+
+
+
+0、基础知识&emsp;&emsp;1.Html是一种超文本标记语言。其结构包括“头”部分（英语：Head）、和“主体”部分（英语：Body），其中“头”部提供关于网页的信息，“主体”...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2018/07/09/xss/" title="初见XSS">				
+								
+								<img class="lazy" src="/hexo/img/placeholder.jpg" data-src="/hexo/img/cart_cover.jpg" alt="初见XSS"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2018/07/07/upload/" title="初见文件上传绕过">
+								初见文件上传绕过			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 7日, 2018				
+							</p>
+							<p class="relate-post-content">
+								前言&emsp;&emsp;懒疾成癌。。。&emsp;&emsp;有心杀贼，无力回天。。。
+
+
+1、一句话木马简述&emsp;emsp;一句话木马短小精悍，而且功能强大，隐蔽性非常好，在入侵中始终扮演着强大的作用。常用一句话木马asp...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2018/07/07/upload/" title="初见文件上传绕过">				
+								
+								<img class="lazy" src="/hexo/img/placeholder.jpg" data-src="/hexo/img/cart_cover.jpg" alt="初见文件上传绕过"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2018/07/06/SQL2/" title="二见SQL：过滤绕过与盲注">
+								二见SQL：过滤绕过与盲注			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 6日, 2018				
+							</p>
+							<p class="relate-post-content">
+								前言&emsp;&emsp;表面坚强，内心凉凉。&emsp;&emsp;若要年华不负，唯有勇敢以付。  
+
+
+1、过滤绕过(0)、小前言&emsp;&emsp;SQL注入的过程中有些特定的字符或者字符串会被过滤，数据库无法真正读入查询...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2018/07/06/SQL2/" title="二见SQL：过滤绕过与盲注">				
+								
+								<img class="lazy" src="/hexo/img/placeholder.jpg" data-src="/hexo/img/cart_cover.jpg" alt="二见SQL：过滤绕过与盲注"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2018/07/05/SQL1/" title="初见SQL">
+								初见SQL			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 5日, 2018				
+							</p>
+							<p class="relate-post-content">
+								前言&emsp;&emsp;我是nyqx，我现在慌得一匹。&emsp;&emsp;我不是天生要强，我是注定要凉。  
+
+
+
+0、理论基础&emsp;&emsp;数据库(Database)：是按照数据结构来组织、存储和管理数据的建立在计...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2018/07/05/SQL1/" title="初见SQL">				
+								
+								<img class="lazy" src="/hexo/img/placeholder.jpg" data-src="/hexo/img/cart_cover.jpg" alt="初见SQL"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2018/07/03/xin/" title="初见个人博客：GitHub + hexo">
+								初见个人博客：GitHub + hexo			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 3日, 2018				
+							</p>
+							<p class="relate-post-content">
+								前言&emsp;&emsp;半角春风得意马蹄疾，一日看尽长安花。&emsp;&emsp;在此之前，还是颤颤巍巍做人，努努力力做事吧！（以下步骤确保前面完成，再继续后面进程）
+
+
+0、简单介绍&emsp;&emsp;GitHub是一个托...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2018/07/03/xin/" title="初见个人博客：GitHub + hexo">				
+								
+								<img class="lazy" src="/hexo/img/placeholder.jpg" data-src="/hexo/img/cart_cover.jpg" alt="初见个人博客：GitHub + hexo"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2018/07/03/index/" title="flink">
+								flink			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 3日, 2018				
+							</p>
+							<p class="relate-post-content">
+								友链：
+突然想起来啦，多添加些友链~~
+
+
+
+角落里的安全
+kami
+Redy
+
+
+
+
+0x9A82
+安全圈导航
+VeroFess
+
+
+muhe
+ swing
+蛙师傅
+
+
+l3m0n
+K0yrun
+
+
+
+ZGSUnion：
+
+
+
+0K...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2018/07/03/index/" title="flink">				
+								
+								<img class="lazy" src="/hexo/img/placeholder.jpg" data-src="/hexo/img/cart_cover.jpg" alt="flink"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2018/07/02/hello-world/" title="Hello World">
+								Hello World			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 2日, 2018				
+							</p>
+							<p class="relate-post-content">
+								Hello World！！
+
+
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2018/07/02/hello-world/" title="Hello World">				
+								
+								<img class="lazy" src="/hexo/img/placeholder.jpg" data-src="/hexo/img/cart_cover.jpg" alt="Hello World"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+
+
+	 
+	<script src="/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by nyqx. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+
+<!-- love effect -->
+
+	<script src="/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
